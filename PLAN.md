@@ -1,0 +1,386 @@
+# CalcHub — 실행 계획서 (PLAN)
+
+> SPEC.md 기반 PM 관점 Phase별 실행 TODO 리스트
+> 각 태스크는 `[ ]` (미완료) / `[x]` (완료) 로 추적한다.
+
+---
+
+## Phase 1: 기반 구축 (1~2주차)
+
+> **목표:** 개발환경 완성 + 핵심 계산 엔진 구현 + 배포 파이프라인 확보
+> **완료 조건:** 빈 페이지가 커스텀 도메인으로 배포되고, 세금 계산 엔진이 테스트를 통과한다.
+
+### 1-1. 인프라 셋업
+
+- [ ] 도메인 구매 (Cloudflare Registrar, `.com` 우선)
+- [ ] GitHub 리포지토리 생성 및 초기 커밋
+- [ ] Cloudflare Pages 프로젝트 생성 + GitHub 연결
+- [ ] 커스텀 도메인 연결 + SSL 확인
+- [ ] 빈 페이지 배포 확인 (도메인 접속 → 페이지 정상 노출)
+
+### 1-2. 프로젝트 초기화
+
+- [ ] Astro 프로젝트 생성 (`create astro`)
+- [ ] React 통합 설정 (`@astrojs/react`)
+- [ ] Tailwind CSS 설정 (`@astrojs/tailwind`)
+- [ ] TypeScript 설정 (`strict` 모드)
+- [ ] Vitest 설정 (테스트 환경)
+- [ ] 5계층 폴더 구조 생성
+  ```
+  src/engine/    — Core Calculation Engine
+  src/config/    — Country Config Layer (JSON)
+  src/insight/   — Insight Engine
+  src/components/ — React Islands
+  src/pages/     — Astro Pages
+  src/layouts/   — Layout 템플릿
+  tests/         — 단위 테스트
+  ```
+- [ ] ESLint + Prettier 설정 (코드 품질 최소 기준)
+
+### 1-3. Config Layer 구축
+
+- [ ] Config JSON 스키마 정의 (TypeScript 타입)
+- [ ] KR 2026 Config JSON 작성 (종합소득세 세율표, 공제 기준)
+- [ ] US 2026 Config JSON 작성 (Federal brackets, SE Tax, Standard Deduction)
+- [ ] US State Config 작성 — CA, NY, TX 세율
+- [ ] Config 로더 유틸리티 구현 (연도별/국가별 JSON 로드)
+- [ ] `meta.sources` 에 공식 출처 URL 명시 (IRS.gov, 국세청 고시)
+
+### 1-4. Core Calculation Engine
+
+- [ ] 공통 계산 인터페이스 설계 (`CalculatorInput` / `CalculatorOutput` 타입)
+- [ ] KR 종합소득세 계산 함수 구현
+  - 소득금액 → 과세표준 → 누진세 산출 → 세액공제 → 결정세액
+  - 지방소득세 (10%) 계산
+  - 기납부세액 (3.3%) 차감 → 환급/추가납부 산출
+- [ ] US Federal Tax 계산 함수 구현
+  - Filing Status별 Standard Deduction 적용
+  - 누진세 Bracket 계산
+- [ ] US Self-Employment Tax 계산 함수 구현 (15.3%)
+- [ ] US State Tax 계산 함수 구현 (CA, NY, TX)
+- [ ] 모든 계산 함수 단위 테스트 작성 + 통과 확인
+  - KR: 최소 5개 소득 구간별 테스트 케이스
+  - US: Filing Status × State 조합 테스트 케이스
+
+### Phase 1 체크포인트
+
+- [ ] `npm run build` 성공
+- [ ] `npm run test` 전체 통과
+- [ ] Cloudflare Pages에 빈 페이지 배포 확인
+- [ ] 계산 엔진 정확도 수동 검증 (홈택스/IRS 기준 대조)
+
+---
+
+## Phase 2: MVP 배포 (3~4주차)
+
+> **목표:** KR/US 각 1개 계산기 라이브 배포 + SEO 기반 확보 + AdSense 승인 신청
+> **완료 조건:** 두 계산기가 프로덕션에서 동작하고, Google에 인덱싱 요청이 완료된다.
+
+### 2-1. KR 계산기 UI
+
+- [ ] 입력 폼 React 컴포넌트 구현
+  - 연간 총수입, 필요경비, 기납부세액, 부양가족 수, 국민연금/건강보험
+  - 기납부세액 자동 계산 토글 (총수입 × 3.3%)
+  - 입력값 유효성 검사 (음수, 빈값 처리)
+- [ ] 결과 표시 컴포넌트 구현
+  - 종합소득세, 지방소득세, 기납부세액, **환급/추가납부 예상액** (강조)
+- [ ] 인사이트 패널 컴포넌트 구현
+  - 유효세율 (%)
+  - 환급 가능성 추정
+  - 직장인 대비 세부담 비교
+  - 절세 여지 가이드
+- [ ] KR 계산기 Astro 페이지 생성 (`/kr/프리랜서-종합소득세-계산기`)
+- [ ] 모바일 반응형 확인 (모바일 퍼스트)
+
+### 2-2. US 계산기 UI
+
+- [ ] 입력 폼 React 컴포넌트 구현
+  - Annual Gross Income, Business Expenses
+  - Filing Status (Single / MFJ / HoH) 셀렉트
+  - State (CA, NY, TX) 셀렉트
+  - Deduction Type (Standard / Itemized) 셀렉트
+- [ ] 결과 표시 컴포넌트 구현
+  - Federal Tax, SE Tax, State Tax, Total Tax, Net Income
+- [ ] 인사이트 패널 컴포넌트 구현
+  - Effective Tax Rate
+  - Quarterly Payment Amount
+  - SEP IRA Savings
+  - Penalty Risk
+  - Tax Bracket Position
+- [ ] US 계산기 Astro 페이지 생성 (`/us/1099-tax-calculator`)
+- [ ] 모바일 반응형 확인
+
+### 2-3. 공통 UI/UX
+
+- [ ] BaseLayout 구현 (헤더, 푸터, 네비게이션)
+- [ ] 랜딩 페이지 (`/`) — KR/US 계산기 진입점
+- [ ] About 페이지 — 운영자 정보 (YMYL E-E-A-T 대응)
+- [ ] 404 페이지
+- [ ] 광고 슬롯 컴포넌트 (Phase 3에서 AdSense 코드 삽입, 우선 placeholder)
+  - 상단 배너, 결과 아래, 인피드, 하단 앵커 — 4개 위치
+
+### 2-4. SEO & Authority Layer
+
+- [ ] `<meta>` 태그 자동 생성 (title, description, canonical)
+- [ ] Open Graph 태그 (og:title, og:description, og:image)
+- [ ] Schema.org 구조화 데이터 (FAQPage, HowTo)
+- [ ] Authority 블록 컴포넌트 구현 (모든 계산기 하단 자동 삽입)
+  - 적용 연도 표시
+  - 계산식 설명
+  - 공식 출처 링크
+  - 면책 문구
+  - 마지막 업데이트 날짜
+- [ ] `robots.txt` 작성
+- [ ] 사이트맵 자동 생성 설정 (`@astrojs/sitemap`)
+- [ ] Lighthouse 성능 측정 → **SEO 점수 90+, Performance 90+** 확인
+
+### 2-5. Programmatic SEO — V1 롱테일 페이지
+
+- [ ] 롱테일 페이지 데이터 정의 (JSON/배열)
+  - KR 10개: 직군별 (배달기사, 유튜버, 개발자 등) + 소득 구간별
+  - US 10개: State별 (CA, NY, TX) + 직군별 (Uber, DoorDash, Developer 등)
+- [ ] 동적 라우팅 구현 (`[...slug].astro`)
+- [ ] 페이지별 고유 title, description, h1 자동 생성
+- [ ] 내부 링크 — 관련 계산기 상호 연결
+- [ ] 총 20개 롱테일 페이지 배포 확인
+
+### 2-6. 분석 + 광고 기반
+
+- [ ] Google Search Console 사이트 등록 + 소유권 인증
+- [ ] 사이트맵 제출
+- [ ] GA4 프로퍼티 생성 + 추적 코드 삽입
+- [ ] 주요 이벤트 추적 설정 (계산 실행, 인사이트 클릭, 관련 계산기 이동)
+- [ ] **AdSense 승인 신청**
+  - 사전 확인: 콘텐츠 충분성, 면책 문구, 개인정보 처리방침, About 페이지
+
+### Phase 2 체크포인트
+
+- [ ] KR 계산기 프로덕션 동작 확인 (5개 소득 구간 수동 테스트)
+- [ ] US 계산기 프로덕션 동작 확인 (3개 State × 3개 Filing Status)
+- [ ] Lighthouse: Performance 90+, SEO 90+, Accessibility 90+
+- [ ] Search Console 인덱싱 요청 완료 (메인 + 롱테일 20개)
+- [ ] GA4 이벤트 수신 확인
+- [ ] AdSense 신청 완료
+
+---
+
+## Phase 3: 인사이트 강화 + 트래픽 성장 (5~8주차)
+
+> **목표:** Insight Engine 고도화 + 콘텐츠 확장 + 광고 최적화 시작
+> **완료 조건:** 인사이트 항목 5개+, 롱테일 30개+, 광고 A/B 테스트 가동
+
+### 3-1. Insight Engine 고도화
+
+- [ ] KR 인사이트 추가
+  - 경비율별 세금 변화 시뮬레이션 ("경비율 X% → Y만 원 절세")
+  - 직장인 동일 소득 대비 세부담 비교 차트
+  - 연도별 세율 변화 비교 (2025 vs 2026)
+- [ ] US 인사이트 추가
+  - SEP IRA 납입액별 절세 시뮬레이션
+  - Quarterly Payment 스케줄 (Q1~Q4 납부일 + 금액)
+  - State 비교 ("TX로 이사 시 $X 절세")
+- [ ] 인사이트 항목 총 5개 이상 동작 확인 (KR/US 각각)
+
+### 3-2. 콘텐츠 확장
+
+- [ ] US State 추가: FL, WA (총 5개 주)
+  - State Config JSON 추가
+  - State Tax 계산 함수 추가 + 테스트
+  - 롱테일 페이지 자동 생성
+- [ ] 직군별 페이지 5개 추가
+  - US: Uber Driver, DoorDash Dasher, Freelance Developer, Etsy Seller, Content Creator
+  - 직군별 공제 항목 가이드 포함
+- [ ] 롱테일 페이지 총 30개 이상 확인
+- [ ] 내부 링크 구조 개선
+  - 모든 계산기 결과 하단에 "관련 계산기" 섹션
+  - 롱테일 → 메인 계산기 링크
+  - 메인 계산기 → 롱테일 사이드바 링크
+
+### 3-3. 광고 수익화
+
+- [ ] AdSense 승인 확인 (미승인 시 대안 검토: Ezoic)
+- [ ] AdSense 광고 코드 삽입 (4개 위치)
+  - 상단 배너 (728×90 / 반응형)
+  - 결과 아래 (336×280 / 반응형) — **핵심 위치**
+  - 인피드 (관련 계산기 목록 사이)
+  - 하단 앵커
+- [ ] A/B 테스트 1: 결과 아래 광고 크기 (336×280 vs 반응형)
+- [ ] A/B 테스트 2: 상단 배너 유무 (RPM vs 체류시간 트레이드오프)
+- [ ] 모바일 광고 배치 최적화 (트래픽 70%+ 대응)
+
+### 3-4. 기술적 SEO 강화
+
+- [ ] 사이트맵 자동 업데이트 확인 (새 페이지 반영)
+- [ ] robots.txt 최적화
+- [ ] Core Web Vitals 확인 (LCP < 2.5s, FID < 100ms, CLS < 0.1)
+- [ ] Search Console 인덱싱 현황 모니터링
+- [ ] 크롤링 오류 수정 (있을 경우)
+
+### Phase 3 체크포인트
+
+- [ ] 인사이트 항목 KR 5개+ / US 5개+ 동작
+- [ ] 롱테일 페이지 30개+ 배포
+- [ ] AdSense 광고 4개 위치 라이브
+- [ ] A/B 테스트 2개 가동 중
+- [ ] 5개 US State 계산 가능 (CA, NY, TX, FL, WA)
+
+---
+
+## Phase 4: 데이터 분석 + 시장 결정 (9~12주차)
+
+> **목표:** 90일간 축적된 데이터를 분석하여 집중 시장을 결정한다.
+> **완료 조건:** KR vs US 비교 리포트 작성 + 집중 시장 선택 + 다음 분기 로드맵 확정
+
+### 4-1. 트래픽 분석
+
+- [ ] GA4 데이터 수집 확인 (최소 4주 데이터)
+- [ ] KR vs US 트래픽 비교 리포트
+  - 월 방문자 (목표: KR 3,000 / US 2,000)
+  - 평균 체류시간 (목표: KR 2분+ / US 2.5분+)
+  - 페이지/세션 (목표: KR 1.6+ / US 1.8+)
+  - 이탈률
+  - 유입 경로 (Organic Search 비율)
+- [ ] 페이지별 트래픽 순위 분석 — 고성과 페이지 식별
+- [ ] 디바이스 비율 확인 (모바일/데스크톱)
+
+### 4-2. SEO 분석
+
+- [ ] Search Console 키워드 분석
+  - 노출 수 / 클릭 수 / CTR / 평균 순위
+  - KR vs US 키워드 성과 비교
+- [ ] 인덱싱 현황 확인 (30개+ 페이지 인덱싱 목표)
+- [ ] 비인덱싱 페이지 원인 분석 + 수정
+- [ ] 고성과 키워드 식별 → Phase 2 확장 우선순위 결정
+
+### 4-3. 수익 분석
+
+- [ ] RPM 분석 (국가별, 페이지별)
+  - KR RPM 실측치 (목표: $5~8)
+  - US RPM 실측치 (목표: $15~25)
+- [ ] CTR 분석 (목표: KR 1.5%+ / US 2%+)
+- [ ] 광고 위치별 성과 분석
+  - 결과 아래 vs 상단 vs 인피드 vs 하단
+- [ ] A/B 테스트 결과 정리 → 최적 광고 배치 확정
+- [ ] Heatmap 분석 도구 도입 (Hotjar 무료 or Microsoft Clarity)
+
+### 4-4. 시장 결정
+
+- [ ] KR vs US 종합 평가 매트릭스 작성
+  ```
+  점수 = RPM × 월 트래픽 × 확장 용이성 × (1 / 경쟁 강도)
+  ```
+- [ ] **집중 시장 결정** (KR or US)
+- [ ] 결정 근거 문서화 (데이터 기반)
+
+### 4-5. 다음 분기 계획 수립
+
+- [ ] Phase 2 (장기) 로드맵 상세화
+  - 집중 시장 기준 계산기 확장 목록
+  - Programmatic SEO 확장 계획 (500페이지 목표)
+  - 수익 목표 재설정
+- [ ] SPEC.md 업데이트 (90일 분석 결과 반영)
+
+### Phase 4 체크포인트
+
+- [ ] KR/US 비교 분석 리포트 완성
+- [ ] 집중 시장 결정 완료 + 근거 문서화
+- [ ] 최적 광고 배치 확정
+- [ ] Phase 2 로드맵 확정
+
+---
+
+## Phase 5: 집중 확장 (4~6개월) — 장기
+
+> **목표:** 집중 시장에서 계산기 포트폴리오 확장 + 월 5만 방문자
+> **완료 조건:** 계산기 10개+, 롱테일 500개+, 월 방문자 5만, 월 수익 100만 원+
+
+### 5-1. 계산기 포트폴리오 확장
+
+- [ ] 집중 시장 기준 신규 계산기 5개+ 개발
+  - (US 집중 시) Roth vs Traditional IRA, W-2 vs 1099 비교, Home Office Deduction, Vehicle Mileage Deduction, Student Loan Interest
+  - (KR 집중 시) 유튜버 세금, 주식 양도세, 부동산 양도세, 근로소득세, 퇴직금 계산기
+- [ ] 비교 계산기 추가 (세금 전략 A vs B)
+- [ ] 계산기별 Config JSON + 계산 함수 + 테스트 + UI
+
+### 5-2. Programmatic SEO 대규모 확장
+
+- [ ] 롱테일 자동 생성 시스템 고도화
+  - 직군 × 지역 × 연도 × 소득구간 조합 자동화
+- [ ] 500페이지+ 자동 생성 + 배포
+- [ ] (US) 주별 15개 확장
+- [ ] 페이지별 고유 인사이트 자동 생성
+
+### 5-3. 수익 최적화
+
+- [ ] 광고 배치 지속 최적화 (데이터 기반)
+- [ ] RPM 높은 페이지 패턴 분석 → 복제
+- [ ] 네이티브 광고 / 인피드 광고 테스트
+
+### Phase 5 체크포인트
+
+- [ ] 계산기 10개+ 라이브
+- [ ] 롱테일 500페이지+ 배포
+- [ ] 월 방문자 5만 달성
+- [ ] 월 수익 100만 원+ 달성
+
+---
+
+## Phase 6: 수익 다각화 (7~12개월) — 장기
+
+> **목표:** AdSense 외 수익원 확보 + 월 $3,000+ 달성
+> **완료 조건:** Affiliate 수익 발생 + 이메일 리스트 구축 시작
+
+### 6-1. Affiliate 도입
+
+- [ ] 세무 소프트웨어 Affiliate 파트너십 (TurboTax, 삼쩜삼 등)
+- [ ] 회계 서비스 Affiliate
+- [ ] 계산 결과 페이지에 자연스러운 Affiliate 링크 배치
+- [ ] Affiliate 수익 추적 설정
+
+### 6-2. 사용자 리텐션
+
+- [ ] 계산 결과 이메일 저장 기능
+- [ ] 금리/세율 변경 알림 서비스 (이메일 리스트)
+- [ ] 세무 서비스 연결 (CPA 매칭)
+
+### 6-3. 개발 효율화
+
+- [ ] CLI 툴 개발: JSON 설정만으로 신규 계산기 릴리즈
+- [ ] 계산기 템플릿 시스템 구축
+
+### Phase 6 체크포인트
+
+- [ ] AdSense + Affiliate 수익 다각화
+- [ ] 월 $3,000+ 달성
+- [ ] 이메일 리스트 1,000+ 구독자
+
+---
+
+## Phase 7: 글로벌 확장 (13~18개월) — 장기
+
+> **목표:** 추가 국가 진출 + B2B 가능성 검토
+
+- [ ] 영국(UK) 또는 캐나다(CA) 세금 계산기 추가
+- [ ] 일본/동남아 시장 검토
+- [ ] 계산 API 일부 공개 (B2B 가능성 검토)
+- [ ] 글로벌 도메인/SEO 전략 수립
+
+---
+
+## 부록: 주요 리스크 대응 체크리스트
+
+실행 중 아래 리스크 발생 시 즉시 대응한다.
+
+| 리스크 | 트리거 | 대응 액션 |
+|--------|--------|----------|
+| 세법 변경 | 국세청/IRS 공지 | Config JSON 업데이트 (5분 내) + 메타 날짜 갱신 |
+| 계산 오류 신고 | 사용자 피드백 | 즉시 테스트 케이스 추가 + 수정 배포 |
+| YMYL 순위 하락 | Search Console 순위 급락 | Authority Layer 강화 + 출처 보강 |
+| 트래픽 정체 | 4주 연속 성장 없음 | 롱테일 축 추가 (직군/지역/소득) |
+| RPM 기대 이하 | RPM < 목표의 50% | Insight Engine 강화 → 체류시간 개선 |
+| AdSense 거절 | 승인 거부 통지 | 콘텐츠 보강 후 재신청 / Ezoic 대안 전환 |
+| 번아웃 | 2주 이상 진행 멈춤 | 스코프 축소, 자동화 우선, 주 단위 스프린트 |
+
+---
+
+*이 문서는 SPEC.md와 함께 관리되며, 각 Phase 완료 시 체크포인트를 검증하고 다음 Phase로 진행한다.*
