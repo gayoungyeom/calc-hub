@@ -20,9 +20,9 @@
 
 ### 1-2. 프로젝트 초기화
 
-- [ ] Next.js 프로젝트 생성 (`create-next-app`, App Router, TypeScript, Tailwind CSS)
-- [ ] Jest + ts-jest 설정 (테스트 환경)
-- [ ] 5계층 폴더 구조 생성
+- [x] Next.js 프로젝트 생성 (`create-next-app`, App Router, TypeScript, Tailwind CSS)
+- [x] Jest + ts-jest 설정 (테스트 환경)
+- [x] 5계층 폴더 구조 생성
   ```
   src/engine/     — Core Calculation Engine
   src/config/     — Country Config Layer (JSON)
@@ -31,37 +31,37 @@
   app/            — Next.js App Router (SSG)
   __tests__/      — 단위 테스트
   ```
-- [ ] ESLint + Prettier 설정 (코드 품질 최소 기준)
+- [x] ESLint + Prettier 설정 (코드 품질 최소 기준)
 
 ### 1-3. Config Layer 구축
 
-- [ ] Config JSON 스키마 정의 (TypeScript 타입)
-- [ ] KR 2026 Config JSON 작성 (종합소득세 세율표, 공제 기준)
-- [ ] US 2026 Config JSON 작성 (Federal brackets, SE Tax, Standard Deduction)
-- [ ] US State Config 작성 — CA, NY, TX 세율
-- [ ] Config 로더 유틸리티 구현 (연도별/국가별 JSON 로드)
-- [ ] `meta.sources` 에 공식 출처 URL 명시 (IRS.gov, 국세청 고시)
+- [x] Config JSON 스키마 정의 (TypeScript 타입)
+- [x] KR 2026 Config JSON 작성 (종합소득세 세율표, 공제 기준)
+- [x] US 2026 Config JSON 작성 (Federal brackets, SE Tax, Standard Deduction)
+- [x] US State Config 작성 — CA, NY, TX 세율
+- [x] Config 로더 유틸리티 구현 (연도별/국가별 JSON 로드)
+- [x] `meta.sources` 에 공식 출처 URL 명시 (IRS.gov, 국세청 고시)
 
 ### 1-4. Core Calculation Engine
 
-- [ ] 공통 계산 인터페이스 설계 (`CalculatorInput` / `CalculatorOutput` 타입)
-- [ ] KR 종합소득세 계산 함수 구현
+- [x] 공통 계산 인터페이스 설계 (`CalculatorInput` / `CalculatorOutput` 타입)
+- [x] KR 종합소득세 계산 함수 구현
   - 소득금액 → 과세표준 → 누진세 산출 → 세액공제 → 결정세액
   - 지방소득세 (10%) 계산
   - 기납부세액 (3.3%) 차감 → 환급/추가납부 산출
-- [ ] US Federal Tax 계산 함수 구현
+- [x] US Federal Tax 계산 함수 구현
   - Filing Status별 Standard Deduction 적용
   - 누진세 Bracket 계산
-- [ ] US Self-Employment Tax 계산 함수 구현 (15.3%)
-- [ ] US State Tax 계산 함수 구현 (CA, NY, TX)
-- [ ] 모든 계산 함수 단위 테스트 작성 + 통과 확인
+- [x] US Self-Employment Tax 계산 함수 구현 (15.3%)
+- [x] US State Tax 계산 함수 구현 (CA, NY, TX)
+- [x] 모든 계산 함수 단위 테스트 작성 + 통과 확인
   - KR: 최소 5개 소득 구간별 테스트 케이스
   - US: Filing Status × State 조합 테스트 케이스
 
 ### Phase 1 체크포인트
 
-- [ ] `npm run build` 성공
-- [ ] `npm run test` 전체 통과
+- [x] `npm run build` 성공
+- [x] `npm run test` 전체 통과 (17개)
 - [ ] Vercel에 빈 페이지 배포 확인
 - [ ] 계산 엔진 정확도 수동 검증 (홈택스/IRS 기준 대조)
 
