@@ -12,28 +12,24 @@
 
 ### 1-1. 인프라 셋업
 
-- [ ] 도메인 구매 (Cloudflare Registrar, `.com` 우선)
-- [ ] GitHub 리포지토리 생성 및 초기 커밋
-- [ ] Cloudflare Pages 프로젝트 생성 + GitHub 연결
+- [ ] 도메인 구매 (Cloudflare Registrar 또는 Namecheap, `.com` 우선)
+- [x] GitHub 리포지토리 생성 및 초기 커밋
+- [ ] Vercel 프로젝트 생성 + GitHub 연결
 - [ ] 커스텀 도메인 연결 + SSL 확인
 - [ ] 빈 페이지 배포 확인 (도메인 접속 → 페이지 정상 노출)
 
 ### 1-2. 프로젝트 초기화
 
-- [ ] Astro 프로젝트 생성 (`create astro`)
-- [ ] React 통합 설정 (`@astrojs/react`)
-- [ ] Tailwind CSS 설정 (`@astrojs/tailwind`)
-- [ ] TypeScript 설정 (`strict` 모드)
-- [ ] Vitest 설정 (테스트 환경)
+- [ ] Next.js 프로젝트 생성 (`create-next-app`, App Router, TypeScript, Tailwind CSS)
+- [ ] Jest + ts-jest 설정 (테스트 환경)
 - [ ] 5계층 폴더 구조 생성
   ```
-  src/engine/    — Core Calculation Engine
-  src/config/    — Country Config Layer (JSON)
-  src/insight/   — Insight Engine
-  src/components/ — React Islands
-  src/pages/     — Astro Pages
-  src/layouts/   — Layout 템플릿
-  tests/         — 단위 테스트
+  src/engine/     — Core Calculation Engine
+  src/config/     — Country Config Layer (JSON)
+  src/insight/    — Insight Engine
+  src/components/ — React 컴포넌트
+  app/            — Next.js App Router (SSG)
+  __tests__/      — 단위 테스트
   ```
 - [ ] ESLint + Prettier 설정 (코드 품질 최소 기준)
 
@@ -66,7 +62,7 @@
 
 - [ ] `npm run build` 성공
 - [ ] `npm run test` 전체 통과
-- [ ] Cloudflare Pages에 빈 페이지 배포 확인
+- [ ] Vercel에 빈 페이지 배포 확인
 - [ ] 계산 엔진 정확도 수동 검증 (홈택스/IRS 기준 대조)
 
 ---
@@ -89,7 +85,7 @@
   - 환급 가능성 추정
   - 직장인 대비 세부담 비교
   - 절세 여지 가이드
-- [ ] KR 계산기 Astro 페이지 생성 (`/kr/프리랜서-종합소득세-계산기`)
+- [ ] KR 계산기 Next.js 페이지 생성 (`/kr/프리랜서-종합소득세-계산기`)
 - [ ] 모바일 반응형 확인 (모바일 퍼스트)
 
 ### 2-2. US 계산기 UI
@@ -107,7 +103,7 @@
   - SEP IRA Savings
   - Penalty Risk
   - Tax Bracket Position
-- [ ] US 계산기 Astro 페이지 생성 (`/us/1099-tax-calculator`)
+- [ ] US 계산기 Next.js 페이지 생성 (`/us/1099-tax-calculator`)
 - [ ] 모바일 반응형 확인
 
 ### 2-3. 공통 UI/UX
@@ -131,7 +127,7 @@
   - 면책 문구
   - 마지막 업데이트 날짜
 - [ ] `robots.txt` 작성
-- [ ] 사이트맵 자동 생성 설정 (`@astrojs/sitemap`)
+- [ ] 사이트맵 자동 생성 설정 (`next-sitemap`)
 - [ ] Lighthouse 성능 측정 → **SEO 점수 90+, Performance 90+** 확인
 
 ### 2-5. Programmatic SEO — V1 롱테일 페이지
@@ -139,7 +135,7 @@
 - [ ] 롱테일 페이지 데이터 정의 (JSON/배열)
   - KR 10개: 직군별 (배달기사, 유튜버, 개발자 등) + 소득 구간별
   - US 10개: State별 (CA, NY, TX) + 직군별 (Uber, DoorDash, Developer 등)
-- [ ] 동적 라우팅 구현 (`[...slug].astro`)
+- [ ] 동적 라우팅 구현 (`[slug]/page.tsx` + `generateStaticParams`)
 - [ ] 페이지별 고유 title, description, h1 자동 생성
 - [ ] 내부 링크 — 관련 계산기 상호 연결
 - [ ] 총 20개 롱테일 페이지 배포 확인
@@ -371,16 +367,16 @@
 
 실행 중 아래 리스크 발생 시 즉시 대응한다.
 
-| 리스크 | 트리거 | 대응 액션 |
-|--------|--------|----------|
-| 세법 변경 | 국세청/IRS 공지 | Config JSON 업데이트 (5분 내) + 메타 날짜 갱신 |
-| 계산 오류 신고 | 사용자 피드백 | 즉시 테스트 케이스 추가 + 수정 배포 |
-| YMYL 순위 하락 | Search Console 순위 급락 | Authority Layer 강화 + 출처 보강 |
-| 트래픽 정체 | 4주 연속 성장 없음 | 롱테일 축 추가 (직군/지역/소득) |
-| RPM 기대 이하 | RPM < 목표의 50% | Insight Engine 강화 → 체류시간 개선 |
-| AdSense 거절 | 승인 거부 통지 | 콘텐츠 보강 후 재신청 / Ezoic 대안 전환 |
-| 번아웃 | 2주 이상 진행 멈춤 | 스코프 축소, 자동화 우선, 주 단위 스프린트 |
+| 리스크         | 트리거                   | 대응 액션                                      |
+| -------------- | ------------------------ | ---------------------------------------------- |
+| 세법 변경      | 국세청/IRS 공지          | Config JSON 업데이트 (5분 내) + 메타 날짜 갱신 |
+| 계산 오류 신고 | 사용자 피드백            | 즉시 테스트 케이스 추가 + 수정 배포            |
+| YMYL 순위 하락 | Search Console 순위 급락 | Authority Layer 강화 + 출처 보강               |
+| 트래픽 정체    | 4주 연속 성장 없음       | 롱테일 축 추가 (직군/지역/소득)                |
+| RPM 기대 이하  | RPM < 목표의 50%         | Insight Engine 강화 → 체류시간 개선            |
+| AdSense 거절   | 승인 거부 통지           | 콘텐츠 보강 후 재신청 / Ezoic 대안 전환        |
+| 번아웃         | 2주 이상 진행 멈춤       | 스코프 축소, 자동화 우선, 주 단위 스프린트     |
 
 ---
 
-*이 문서는 SPEC.md와 함께 관리되며, 각 Phase 완료 시 체크포인트를 검증하고 다음 Phase로 진행한다.*
+_이 문서는 SPEC.md와 함께 관리되며, 각 Phase 완료 시 체크포인트를 검증하고 다음 Phase로 진행한다._

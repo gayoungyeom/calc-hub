@@ -300,27 +300,28 @@ Tax Liability = SUM(Taxable Income × Bracket Rate) - Tax Credits
 | 학습 곡선        | React 기반 (보편적)                 | 자체 문법 + 다중 프레임워크           |
 | AdSense 통합     | 간편 (Script 컴포넌트)              | 수동 설정 필요                        |
 
-### 6.3 추천: **Astro + React Islands**
+### 6.3 추천: **Next.js (SSG)**
 
 **선택 근거:**
 
-1. **SEO 최우선** — Zero JS by default로 Lighthouse 95+ 달성이 쉬움
-2. **빌드 성능** — 수천 개 정적 페이지 생성 시 Next.js 대비 빌드 시간 우위
-3. **필요한 곳만 React** — 계산기 폼 등 인터랙션이 필요한 부분만 React Island로 구현
-4. **1인 개발 효율** — 콘텐츠 중심 사이트에 최적화된 DX
+1. **React 생태계 활용** — React 숙련도를 그대로 활용, 별도 학습 비용 없음
+2. **풀스택 확장성** — API Routes, 인증, 서버 기능 등 추후 확장 시 프레임워크 교체 불필요
+3. **SEO 충분** — `getStaticProps` + `getStaticPaths`로 완전한 정적 HTML 생성, Lighthouse 90+ 달성 가능
+4. **AdSense 통합 용이** — `next/script` 컴포넌트로 간편하게 광고 스크립트 삽입
+5. **거대한 커뮤니티** — 트러블슈팅 레퍼런스 풍부, 1인 개발 시 문제 해결 속도에 유리
 
-**대안:** React 경험이 풍부하고 추후 풀스택 확장(API, 인증 등)을 고려한다면 Next.js SSG도 유효한 선택. 다만 V1 MVP 단계에서는 Astro가 더 가볍고 빠르다.
+**유의점:** React 런타임 번들(~40KB+)이 포함되므로, `next/dynamic` 지연 로딩 + 이미지 최적화(`next/image`)로 Core Web Vitals를 관리한다.
 
 ### 6.4 전체 스택
 
 | 영역          | 기술                     | 이유                                  |
 | ------------- | ------------------------ | ------------------------------------- |
-| 프레임워크    | **Astro**                | SSG 기본, Zero JS, 빠른 빌드          |
-| UI (인터랙션) | **React** (Islands)      | 계산기 폼, 결과 표시 등               |
+| 프레임워크    | **Next.js**              | SSG + React 기반, 풀스택 확장 가능    |
+| UI            | **React**                | 계산기 폼, 결과 표시 등               |
 | 스타일링      | **Tailwind CSS**         | 유틸리티 기반, 빠른 UI 구현           |
 | 언어          | **TypeScript**           | 세금 계산 로직 타입 안전성            |
-| 테스트        | **Vitest**               | 세금 계산 Pure Function 단위 테스트   |
-| 배포          | **Cloudflare Pages**     | 무료 티어 넉넉, 글로벌 CDN, 빠른 빌드 |
+| 테스트        | **Jest**                 | Next.js 기본 호환, 세금 계산 단위 테스트 |
+| 배포          | **Vercel**               | Next.js 네이티브 지원, 무료 티어, 글로벌 CDN |
 | 분석          | **GA4 + Search Console** | 트래픽·RPM·키워드 분석                |
 | 광고          | **Google AdSense**       | 초기 수익화                           |
 | 버전 관리     | **GitHub**               | 코드 + JSON Config 관리               |
@@ -597,24 +598,25 @@ Google의 E-E-A-T 기준을 충족하지 못하면 순위가 올라가지 않는
 
 ### 13.2 호스팅 + 배포
 
-**추천: Cloudflare Pages**
+**추천: Vercel**
 
-| 항목          | 내용                                      |
-| ------------- | ----------------------------------------- |
-| 무료 티어     | 월 500회 빌드, 무제한 요청, 무제한 대역폭 |
-| 글로벌 CDN    | 자동 (Cloudflare 네트워크)                |
-| 빌드          | Git push → 자동 빌드·배포                 |
-| 커스텀 도메인 | 무료 SSL 포함                             |
-| 프리뷰 배포   | PR마다 프리뷰 URL 자동 생성               |
+| 항목          | 내용                                        |
+| ------------- | ------------------------------------------- |
+| 무료 티어     | 월 100GB 대역폭, 무제한 빌드                |
+| 글로벌 CDN    | 자동 (Vercel Edge Network)                  |
+| 빌드          | Git push → 자동 빌드·배포 (Next.js 네이티브) |
+| 커스텀 도메인 | 무료 SSL 포함                               |
+| 프리뷰 배포   | PR마다 프리뷰 URL 자동 생성                 |
+| Next.js 최적화 | ISR, 이미지 최적화 등 Next.js 기능 완전 지원 |
 
-**대안:** Vercel (무료 티어도 충분), Netlify
+**대안:** Cloudflare Pages, Netlify
 
 ### 13.3 배포 전략
 
 ```
 GitHub (main branch)
     ↓ push
-Cloudflare Pages (자동 빌드)
+Vercel (자동 빌드)
     ↓ 빌드 완료
 글로벌 CDN 배포 (자동)
 ```
@@ -622,18 +624,18 @@ Cloudflare Pages (자동 빌드)
 **배포 플로우:**
 
 1. 로컬 개발 → `git push origin main`
-2. Cloudflare Pages가 자동 감지 → Astro 빌드 실행
+2. Vercel이 자동 감지 → Next.js 빌드 실행
 3. 정적 HTML/CSS/JS가 글로벌 CDN에 배포
 4. 커스텀 도메인으로 서비스
 
-**CI 불필요:** Cloudflare Pages 빌드 파이프라인이 CI 역할 대체 (1인 개발에 충분)
+**CI 불필요:** Vercel 빌드 파이프라인이 CI 역할 대체 (1인 개발에 충분)
 
 ### 13.4 초기 비용 예상
 
 | 항목                 | 비용           |
 | -------------------- | -------------- |
 | 도메인 (.com)        | ~$10/년        |
-| Cloudflare Pages     | $0 (무료 티어) |
+| Vercel               | $0 (무료 티어) |
 | Google AdSense       | $0             |
 | GA4 + Search Console | $0             |
 | **총 초기 비용**     | **~$10/년**    |
@@ -646,6 +648,7 @@ Cloudflare Pages (자동 빌드)
 calc-hub/
 ├── src/
 │   ├── engine/              # Core Calculation Engine
+│   │   ├── types.ts         # 공통 타입 정의
 │   │   ├── calculator.ts    # 공통 계산 인터페이스
 │   │   ├── kr/
 │   │   │   └── income-tax.ts
@@ -661,26 +664,26 @@ calc-hub/
 │   ├── insight/             # Insight Engine
 │   │   ├── kr-insights.ts
 │   │   └── us-insights.ts
-│   ├── components/          # React Islands
-│   │   ├── Calculator.tsx
-│   │   ├── ResultDisplay.tsx
-│   │   └── InsightPanel.tsx
-│   ├── layouts/
-│   │   └── BaseLayout.astro
-│   └── pages/               # Astro Pages (SSG)
-│       ├── index.astro
-│       ├── kr/
-│       │   └── [...slug].astro   # Programmatic SEO
-│       └── us/
-│           └── [...slug].astro
-├── tests/                   # Vitest 테스트
+│   └── components/          # React 컴포넌트
+│       ├── Calculator.tsx
+│       ├── ResultDisplay.tsx
+│       └── InsightPanel.tsx
+├── app/                     # Next.js App Router (SSG)
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── kr/
+│   │   └── [slug]/
+│   │       └── page.tsx     # Programmatic SEO
+│   └── us/
+│       └── [slug]/
+│           └── page.tsx
+├── __tests__/               # Jest 테스트
 │   ├── kr-tax.test.ts
 │   └── us-tax.test.ts
 ├── public/
-│   ├── robots.txt
-│   └── sitemap.xml
-├── astro.config.mjs
-├── tailwind.config.mjs
+│   └── robots.txt
+├── next.config.ts
+├── tailwind.config.ts
 ├── tsconfig.json
 ├── package.json
 └── SPEC.md                  # ← 이 문서
