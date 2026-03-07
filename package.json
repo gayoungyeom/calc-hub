@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "eslint",
     "test": "jest"
   },
   "dependencies": {
     "next": "16.1.6",
+    "next-sitemap": "^4.2.3",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
