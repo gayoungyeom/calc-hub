@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import KrCalculator from "@/components/kr/KrCalculator";
 import AuthorityBlock from "@/components/authority/AuthorityBlock";
+import RelatedLink from "@/components/common/RelatedLink";
 import krPages from "@/config/longtail/kr-pages.json";
 
 interface PageData {
@@ -65,21 +66,19 @@ export default async function KrLongtailPage({
         </h2>
         <ul className="mt-4 space-y-2">
           <li>
-            <Link
+            <RelatedLink
               href="/kr/freelancer-tax-calculator"
-              className="text-sm text-blue-600 hover:underline"
-            >
-              프리랜서 종합소득세 계산기
-            </Link>
+              label="프리랜서 종합소득세 계산기"
+              from={slug}
+            />
           </li>
           {otherPages.map((p: PageData) => (
             <li key={p.slug}>
-              <Link
+              <RelatedLink
                 href={`/kr/${p.slug}`}
-                className="text-sm text-blue-600 hover:underline"
-              >
-                {p.h1}
-              </Link>
+                label={p.h1}
+                from={slug}
+              />
             </li>
           ))}
         </ul>
