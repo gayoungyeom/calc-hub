@@ -74,71 +74,71 @@
 
 ### 2-1. KR 계산기 UI
 
-- [ ] 입력 폼 React 컴포넌트 구현
+- [x] 입력 폼 React 컴포넌트 구현
   - 연간 총수입, 필요경비, 기납부세액, 부양가족 수, 국민연금/건강보험
   - 기납부세액 자동 계산 토글 (총수입 × 3.3%)
   - 입력값 유효성 검사 (음수, 빈값 처리)
-- [ ] 결과 표시 컴포넌트 구현
+- [x] 결과 표시 컴포넌트 구현
   - 종합소득세, 지방소득세, 기납부세액, **환급/추가납부 예상액** (강조)
-- [ ] 인사이트 패널 컴포넌트 구현
+- [x] 인사이트 패널 컴포넌트 구현
   - 유효세율 (%)
   - 환급 가능성 추정
   - 직장인 대비 세부담 비교
   - 절세 여지 가이드
-- [ ] KR 계산기 Next.js 페이지 생성 (`/kr/프리랜서-종합소득세-계산기`)
-- [ ] 모바일 반응형 확인 (모바일 퍼스트)
+- [x] KR 계산기 Next.js 페이지 생성 (`/kr/프리랜서-종합소득세-계산기`)
+- [x] 모바일 반응형 확인 (모바일 퍼스트)
 
 ### 2-2. US 계산기 UI
 
-- [ ] 입력 폼 React 컴포넌트 구현
+- [x] 입력 폼 React 컴포넌트 구현
   - Annual Gross Income, Business Expenses
   - Filing Status (Single / MFJ / HoH) 셀렉트
   - State (CA, NY, TX) 셀렉트
   - Deduction Type (Standard / Itemized) 셀렉트
-- [ ] 결과 표시 컴포넌트 구현
+- [x] 결과 표시 컴포넌트 구현
   - Federal Tax, SE Tax, State Tax, Total Tax, Net Income
-- [ ] 인사이트 패널 컴포넌트 구현
+- [x] 인사이트 패널 컴포넌트 구현
   - Effective Tax Rate
   - Quarterly Payment Amount
   - SEP IRA Savings
   - Penalty Risk
   - Tax Bracket Position
-- [ ] US 계산기 Next.js 페이지 생성 (`/us/1099-tax-calculator`)
-- [ ] 모바일 반응형 확인
+- [x] US 계산기 Next.js 페이지 생성 (`/us/1099-tax-calculator`)
+- [x] 모바일 반응형 확인
 
 ### 2-3. 공통 UI/UX
 
-- [ ] BaseLayout 구현 (헤더, 푸터, 네비게이션)
-- [ ] 랜딩 페이지 (`/`) — KR/US 계산기 진입점
-- [ ] About 페이지 — 운영자 정보 (YMYL E-E-A-T 대응)
-- [ ] 404 페이지
-- [ ] 광고 슬롯 컴포넌트 (Phase 3에서 AdSense 코드 삽입, 우선 placeholder)
+- [x] BaseLayout 구현 (헤더, 푸터, 네비게이션)
+- [x] 랜딩 페이지 (`/`) — KR/US 계산기 진입점
+- [x] About 페이지 — 운영자 정보 (YMYL E-E-A-T 대응)
+- [x] 404 페이지
+- [x] 광고 슬롯 컴포넌트 (Phase 3에서 AdSense 코드 삽입, 우선 placeholder)
   - 상단 배너, 결과 아래, 인피드, 하단 앵커 — 4개 위치
 
 ### 2-4. SEO & Authority Layer
 
-- [ ] `<meta>` 태그 자동 생성 (title, description, canonical)
-- [ ] Open Graph 태그 (og:title, og:description, og:image)
-- [ ] Schema.org 구조화 데이터 (FAQPage, HowTo)
-- [ ] Authority 블록 컴포넌트 구현 (모든 계산기 하단 자동 삽입)
+- [x] `<meta>` 태그 자동 생성 (title, description, canonical)
+- [x] Open Graph 태그 (og:title, og:description, og:image)
+- [x] Schema.org 구조화 데이터 (FAQPage, HowTo)
+- [x] Authority 블록 컴포넌트 구현 (모든 계산기 하단 자동 삽입)
   - 적용 연도 표시
   - 계산식 설명
   - 공식 출처 링크
   - 면책 문구
   - 마지막 업데이트 날짜
-- [ ] `robots.txt` 작성
-- [ ] 사이트맵 자동 생성 설정 (`next-sitemap`)
-- [ ] Lighthouse 성능 측정 → **SEO 점수 90+, Performance 90+** 확인
+- [x] `robots.txt` 작성
+- [x] 사이트맵 자동 생성 설정 (`next-sitemap`)
+- [x] Lighthouse 성능 측정 → **SEO 점수 90+, Performance 90+** 확인
 
 ### 2-5. Programmatic SEO — V1 롱테일 페이지
 
-- [ ] 롱테일 페이지 데이터 정의 (JSON/배열)
+- [x] 롱테일 페이지 데이터 정의 (JSON/배열)
   - KR 10개: 직군별 (배달기사, 유튜버, 개발자 등) + 소득 구간별
   - US 10개: State별 (CA, NY, TX) + 직군별 (Uber, DoorDash, Developer 등)
-- [ ] 동적 라우팅 구현 (`[slug]/page.tsx` + `generateStaticParams`)
-- [ ] 페이지별 고유 title, description, h1 자동 생성
-- [ ] 내부 링크 — 관련 계산기 상호 연결
-- [ ] 총 20개 롱테일 페이지 배포 확인
+- [x] 동적 라우팅 구현 (`[slug]/page.tsx` + `generateStaticParams`)
+- [x] 페이지별 고유 title, description, h1 자동 생성
+- [x] 내부 링크 — 관련 계산기 상호 연결
+- [x] 총 20개 롱테일 페이지 배포 확인
 
 ### 2-6. 분석 + 광고 기반
 
