@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import UsCalculator from "@/components/us/UsCalculator";
+import AuthorityBlock from "@/components/authority/AuthorityBlock";
 
 export const metadata: Metadata = {
   title: "1099 Self-Employed Tax Calculator 2026 — CalcHub",
@@ -30,6 +31,30 @@ export default function Us1099TaxCalculatorPage() {
       </div>
 
       <UsCalculator />
+
+      <AuthorityBlock
+        taxYear={2026}
+        lastUpdated="2026-01-10"
+        sources={[
+          {
+            label: "IRS Publication 334 — Tax Guide for Small Business",
+            url: "https://www.irs.gov/publications/p334",
+          },
+          {
+            label: "IRS Schedule SE — Self-Employment Tax",
+            url: "https://www.irs.gov/forms-pubs/about-schedule-se-form-1040",
+          },
+          {
+            label: "California FTB — Tax Rates",
+            url: "https://www.ftb.ca.gov",
+          },
+          {
+            label: "New York State Tax — Income Tax Rates",
+            url: "https://www.tax.ny.gov",
+          },
+        ]}
+        calculationMethod="Gross Income → Business Expenses → Net Business Income → SE Tax (92.35% × 15.3%) → AGI → Deduction → Federal Tax (progressive brackets) → State Tax"
+      />
     </main>
   );
 }

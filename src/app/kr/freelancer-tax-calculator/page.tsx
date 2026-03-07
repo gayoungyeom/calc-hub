@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import KrCalculator from "@/components/kr/KrCalculator";
+import AuthorityBlock from "@/components/authority/AuthorityBlock";
 
 export const metadata: Metadata = {
   title: "프리랜서 종합소득세 계산기 2026 — CalcHub",
@@ -29,6 +30,22 @@ export default function KrFreelancerTaxCalculatorPage() {
       </div>
 
       <KrCalculator />
+
+      <AuthorityBlock
+        taxYear={2026}
+        lastUpdated="2026-01-10"
+        sources={[
+          {
+            label: "국세청 종합소득세 세율표",
+            url: "https://www.nts.go.kr",
+          },
+          {
+            label: "소득세법 제55조 (세율)",
+            url: "https://www.law.go.kr",
+          },
+        ]}
+        calculationMethod="총수입 → 필요경비 차감 → 소득공제 → 과세표준 × 누진세율 → 산출세액 → 기납부세액 차감"
+      />
     </main>
   );
 }
