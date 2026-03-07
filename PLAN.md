@@ -12,11 +12,11 @@
 
 ### 1-1. 인프라 셋업
 
-- [ ] 도메인 구매 (Cloudflare Registrar 또는 Namecheap, `.com` 우선)
+- [x] 도메인 구매 (Cloudflare Registrar 또는 Namecheap, `.com` 우선)
 - [x] GitHub 리포지토리 생성 및 초기 커밋
-- [ ] Vercel 프로젝트 생성 + GitHub 연결
-- [ ] 커스텀 도메인 연결 + SSL 확인
-- [ ] 빈 페이지 배포 확인 (도메인 접속 → 페이지 정상 노출)
+- [x] Vercel 프로젝트 생성 + GitHub 연결
+- [x] 커스텀 도메인 연결 + SSL 확인
+- [x] 빈 페이지 배포 확인 (도메인 접속 → 페이지 정상 노출)
 
 ### 1-2. 프로젝트 초기화
 
@@ -62,7 +62,7 @@
 
 - [x] `npm run build` 성공
 - [x] `npm run test` 전체 통과 (17개)
-- [ ] Vercel에 빈 페이지 배포 확인
+- [x] Vercel에 빈 페이지 배포 확인
 - [ ] 계산 엔진 정확도 수동 검증 (홈택스/IRS 기준 대조)
 
 ---
