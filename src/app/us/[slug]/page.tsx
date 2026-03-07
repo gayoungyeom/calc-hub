@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import UsCalculator from "@/components/us/UsCalculator";
 import AuthorityBlock from "@/components/authority/AuthorityBlock";
+import RelatedLink from "@/components/common/RelatedLink";
 import usPages from "@/config/longtail/us-pages.json";
 
 interface PageData {
@@ -66,21 +67,19 @@ export default async function UsLongtailPage({
         </h2>
         <ul className="mt-4 space-y-2">
           <li>
-            <Link
+            <RelatedLink
               href="/us/1099-tax-calculator"
-              className="text-sm text-blue-600 hover:underline"
-            >
-              1099 Self-Employed Tax Calculator
-            </Link>
+              label="1099 Self-Employed Tax Calculator"
+              from={slug}
+            />
           </li>
           {otherPages.map((p: PageData) => (
             <li key={p.slug}>
-              <Link
+              <RelatedLink
                 href={`/us/${p.slug}`}
-                className="text-sm text-blue-600 hover:underline"
-              >
-                {p.h1}
-              </Link>
+                label={p.h1}
+                from={slug}
+              />
             </li>
           ))}
         </ul>
