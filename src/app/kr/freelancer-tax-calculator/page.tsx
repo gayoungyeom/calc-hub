@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import KrCalculator from "@/components/kr/KrCalculator";
 import AuthorityBlock from "@/components/authority/AuthorityBlock";
+import RelatedLink from "@/components/common/RelatedLink";
+import krPages from "@/config/longtail/kr-pages.json";
 
 export const metadata: Metadata = {
   title: "프리랜서 종합소득세 계산기 2026 — CalcHub",
@@ -37,6 +39,24 @@ export default function KrFreelancerTaxCalculatorPage() {
       </div>
 
       <KrCalculator />
+
+      {/* 관련 계산기 */}
+      <section className="mt-12">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+          관련 세금 계산기
+        </h2>
+        <ul className="mt-4 space-y-2">
+          {krPages.slice(0, 6).map((p) => (
+            <li key={p.slug}>
+              <RelatedLink
+                href={`/kr/${p.slug}`}
+                label={p.h1}
+                from="freelancer-tax-calculator"
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <AuthorityBlock
         taxYear={2026}
