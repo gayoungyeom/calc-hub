@@ -10,7 +10,7 @@ export default function Header({ locale = "en" }: Props) {
   const isKo = locale === "ko";
 
   return (
-    <header className="border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+    <header className="border-b border-gray-200 bg-white dark:border-dark-border dark:bg-dark-surface">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
         <Link
           href={isKo ? "/kr" : "/us"}
@@ -31,7 +31,7 @@ export default function Header({ locale = "en" }: Props) {
                 href="/us"
                 className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
               >
-                US Calculator
+                미국 세금 계산기
               </Link>
             </>
           ) : (
@@ -46,7 +46,7 @@ export default function Header({ locale = "en" }: Props) {
                 href="/kr"
                 className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
               >
-                KR 계산기
+                Korean Tax Calculator
               </Link>
             </>
           )}

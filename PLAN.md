@@ -153,7 +153,10 @@
 - [x] KR/US 개별 홈페이지 생성 (`/kr`, `/us`)
 - [x] hreflang 태그 추가 (모든 KR/US 페이지, x-default)
 - [x] 다크 모드 토글 (next-themes, class 기반, 전체 컴포넌트 dark: 클래스)
-- [x] 사이트맵 + 메타데이터 검증 (alternateRefs, 신규 페이지 반영)
+- [x] 다크 모드 색상 개선 (다크 그레이 배경, 커스텀 토큰, 버튼 채도 조정)
+- [x] Header/Footer 텍스트 완전 언어 분리 (KR 한국어, US 영어)
+- [x] About/Privacy/Terms 페이지 언어 분리 (`/kr/about`, `/us/about` 등 6개 신규)
+- [x] 사이트맵 + 메타데이터 검증 (신규 페이지 반영)
 
 ### 2-7. 분석 + 광고 기반
 

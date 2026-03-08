@@ -31,10 +31,10 @@ export default function Home() {
       <div className="mt-12 grid w-full max-w-lg gap-6 sm:grid-cols-2">
         <Link
           href="/kr"
-          className="group flex flex-col items-center rounded-2xl border-2 border-gray-200 bg-white p-8 transition-all hover:border-blue-400 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500"
+          className="group flex flex-col items-center rounded-2xl border-2 border-gray-200 bg-white p-8 transition-all hover:border-blue-400 hover:shadow-lg dark:border-dark-border dark:bg-dark-card dark:hover:border-dark-blue"
         >
           <span className="text-5xl">🇰🇷</span>
-          <h2 className="mt-4 text-xl font-bold text-gray-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
+          <h2 className="mt-4 text-xl font-bold text-gray-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-dark-blue">
             한국
           </h2>
           <p className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
@@ -47,10 +47,10 @@ export default function Home() {
 
         <Link
           href="/us"
-          className="group flex flex-col items-center rounded-2xl border-2 border-gray-200 bg-white p-8 transition-all hover:border-blue-400 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500"
+          className="group flex flex-col items-center rounded-2xl border-2 border-gray-200 bg-white p-8 transition-all hover:border-blue-400 hover:shadow-lg dark:border-dark-border dark:bg-dark-card dark:hover:border-dark-blue"
         >
           <span className="text-5xl">🇺🇸</span>
-          <h2 className="mt-4 text-xl font-bold text-gray-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
+          <h2 className="mt-4 text-xl font-bold text-gray-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-dark-blue">
             United States
           </h2>
           <p className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">

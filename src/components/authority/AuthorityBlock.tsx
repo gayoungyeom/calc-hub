@@ -23,7 +23,7 @@ export default function AuthorityBlock({
   const isKo = locale === "ko";
 
   return (
-    <section className="mt-12 rounded-xl border border-gray-200 bg-gray-50 p-6 text-sm text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
+    <section className="mt-12 rounded-xl border border-gray-200 bg-gray-50 p-6 text-sm text-gray-600 dark:border-dark-border dark:bg-dark-card dark:text-gray-400">
       <h3 className="font-semibold text-gray-900 dark:text-white">
         {isKo ? "계산 기준 및 출처" : "Calculation Basis & Sources"}
       </h3>
@@ -55,7 +55,7 @@ export default function AuthorityBlock({
                     href={source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline dark:text-blue-400"
+                    className="text-blue-600 hover:underline dark:text-dark-blue"
                   >
                     {source.label}
                   </a>
@@ -73,7 +73,7 @@ export default function AuthorityBlock({
         </div>
       </dl>
 
-      <p className="mt-4 text-xs text-gray-400 border-t border-gray-200 pt-4 dark:border-gray-700 dark:text-gray-500">
+      <p className="mt-4 text-xs text-gray-400 border-t border-gray-200 pt-4 dark:border-dark-border dark:text-gray-500">
         {isKo
           ? "본 계산기는 참고용이며 법적 효력이 없습니다. 정확한 세금 신고 및 납부는 공인 세무사 또는 회계사와 상담하시기 바랍니다."
           : "This calculator is for reference only and has no legal effect. Please consult a qualified tax professional for accurate tax filing."}

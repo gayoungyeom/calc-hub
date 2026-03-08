@@ -57,7 +57,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
           placeholder="e.g. 100,000"
           value={grossIncome}
           onChange={(e) => setGrossIncome(formatNumberInput(e.target.value))}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
           required
         />
         <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">Your total 1099 income before expenses</p>
@@ -75,7 +75,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
           placeholder="0"
           value={expenses}
           onChange={(e) => setExpenses(formatNumberInput(e.target.value))}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
         />
       </div>
 
@@ -88,7 +88,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
           id="filingStatus"
           value={filingStatus}
           onChange={(e) => setFilingStatus(e.target.value as UsFilingStatus)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
         >
           {FILING_STATUSES.map((s) => (
             <option key={s.value} value={s.value}>
@@ -107,7 +107,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
           id="state"
           value={state}
           onChange={(e) => setState(e.target.value)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
         >
           {STATES.map((s) => (
             <option key={s.value} value={s.value}>
@@ -159,14 +159,14 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
             placeholder="0"
             value={itemizedDeduction}
             onChange={(e) => setItemizedDeduction(formatNumberInput(e.target.value))}
-            className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+            className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
           />
         </div>
       )}
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 transition-colors"
+        className="w-full rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 dark:bg-dark-btn dark:hover:bg-dark-btn-hover transition-colors"
       >
         Calculate Tax
       </button>

@@ -31,7 +31,7 @@ export default function KrHomePage() {
         </p>
         <Link
           href="/kr/freelancer-tax-calculator"
-          className="mt-8 inline-block rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white hover:bg-blue-700 transition-colors"
+          className="mt-8 inline-block rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white hover:bg-blue-700 dark:bg-dark-btn dark:hover:bg-dark-btn-hover transition-colors"
         >
           세금 계산하기
         </Link>
@@ -66,7 +66,7 @@ export default function KrHomePage() {
               <Link
                 key={page.slug}
                 href={`/kr/${page.slug}`}
-                className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-gray-700 dark:hover:border-blue-500"
+                className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
               >
                 <h3 className="font-semibold text-gray-900 dark:text-white">
                   {page.h1}

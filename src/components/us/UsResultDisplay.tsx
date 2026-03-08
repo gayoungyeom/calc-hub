@@ -37,7 +37,7 @@ export default function UsResultDisplay({ result }: Props) {
       </div>
 
       {/* 상세 내역 */}
-      <div className="rounded-xl border border-gray-200 divide-y divide-gray-100 dark:border-gray-700 dark:divide-gray-700">
+      <div className="rounded-xl border border-gray-200 divide-y divide-gray-100 dark:border-dark-border dark:divide-dark-border">
         <ResultRow label="Net Business Income" value={result.netBusinessIncome} />
         <ResultRow label="Self-Employment Tax (15.3%)" value={result.selfEmploymentTax} />
         <ResultRow label="SE Tax Deduction (50%)" value={result.seTaxDeduction} muted />
