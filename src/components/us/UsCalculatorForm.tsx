@@ -15,8 +15,10 @@ const FILING_STATUSES: { value: UsFilingStatus; label: string }[] = [
 
 const STATES = [
   { value: "CA", label: "California" },
+  { value: "FL", label: "Florida" },
   { value: "NY", label: "New York" },
   { value: "TX", label: "Texas" },
+  { value: "WA", label: "Washington" },
 ];
 
 export default function UsCalculatorForm({ onCalculate }: Props) {
