@@ -199,18 +199,17 @@
 
 ### 3-2. 콘텐츠 확장
 
-- [ ] US State 추가: FL, WA (총 5개 주)
-  - State Config JSON 추가
-  - State Tax 계산 함수 추가 + 테스트
-  - 롱테일 페이지 자동 생성
-- [ ] 직군별 페이지 5개 추가
+- [x] US State 추가: FL, WA (총 5개 주)
+  - State Config JSON 추가 (FL, WA — 소득세 없음)
+  - State Tax 테스트 추가 (19개 통과)
+  - FL, WA 롱테일 페이지 생성
+- [x] 직군별 페이지 5개 + 공제 가이드
   - US: Uber Driver, DoorDash Dasher, Freelance Developer, Etsy Seller, Content Creator
-  - 직군별 공제 항목 가이드 포함
-- [ ] 롱테일 페이지 총 30개 이상 확인
-- [ ] 내부 링크 구조 개선
-  - 모든 계산기 결과 하단에 "관련 계산기" 섹션
-  - 롱테일 → 메인 계산기 링크
-  - 메인 계산기 → 롱테일 사이드바 링크
+  - 직군별 공제 항목 5개씩 가이드 포함
+- [x] 롱테일 페이지 총 34개 (KR 18 + US 16)
+- [x] 내부 링크 구조 개선
+  - 메인 계산기 → 롱테일 6개 링크 (KR/US 모두)
+  - 롱테일 → 메인 계산기 링크 (기존 유지)
 
 ### 3-3. 광고 수익화
 
