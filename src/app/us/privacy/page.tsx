@@ -1,34 +1,36 @@
-import type { Metadata } from 'next';
-import DefaultLayout from "@/components/layout/DefaultLayout";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — CalcHub',
+  title: "Privacy Policy — CalcHub",
   description:
-    'CalcHub 개인정보 처리방침. 수집하는 정보, 쿠키 사용, 광고 데이터 처리에 대해 안내합니다.',
+    "CalcHub Privacy Policy. Learn about the information we collect, cookie usage, and advertising data processing.",
 };
 
-export default function PrivacyPage() {
+export default function UsPrivacyPage() {
   return (
-    <DefaultLayout>
     <main className="mx-auto max-w-2xl px-4 py-12 sm:px-6">
-      <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
         Privacy Policy
       </h1>
-      <p className="mt-2 text-sm text-gray-500">Last updated: March 7, 2026</p>
+      <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+        Last updated: March 7, 2026
+      </p>
 
-      <div className="mt-8 space-y-8 text-gray-700 leading-relaxed text-sm">
+      <div className="mt-8 space-y-8 text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
         <section>
-          <h2 className="text-lg font-semibold text-gray-900">1. Overview</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+            1. Overview
+          </h2>
           <p className="mt-2">
-            CalcHub (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) operates
-            the website calchubs.org. This page informs you of our policies
-            regarding the collection, use, and disclosure of information when
-            you use our Service.
+            CalcHub (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) operates the
+            website calchubs.org. This page informs you of our policies regarding
+            the collection, use, and disclosure of information when you use our
+            Service.
           </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
             2. Information We Collect
           </h2>
           <p className="mt-2">
@@ -38,13 +40,13 @@ export default function PrivacyPage() {
           </p>
           <p className="mt-2">
             All tax calculations are performed entirely in your browser. Your
-            income data and calculation inputs are never sent to or stored on
-            our servers.
+            income data and calculation inputs are never sent to or stored on our
+            servers.
           </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
             3. Analytics (Google Analytics 4)
           </h2>
           <p className="mt-2">
@@ -61,12 +63,12 @@ export default function PrivacyPage() {
           </ul>
           <p className="mt-2">
             This data is aggregated and anonymized. We do not use it to identify
-            individual users. For more information, see{' '}
+            individual users. For more information, see{" "}
             <a
               href="https://policies.google.com/privacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline dark:text-dark-blue"
             >
               Google&apos;s Privacy Policy
             </a>
@@ -75,7 +77,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
             4. Advertising (Google AdSense)
           </h2>
           <p className="mt-2">
@@ -86,21 +88,21 @@ export default function PrivacyPage() {
             based on your browsing history.
           </p>
           <p className="mt-2">
-            You may opt out of personalized advertising by visiting{' '}
+            You may opt out of personalized advertising by visiting{" "}
             <a
               href="https://www.google.com/settings/ads"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline dark:text-dark-blue"
             >
               Google Ads Settings
             </a>
-            . Alternatively, you can opt out of third-party cookies by visiting{' '}
+            . Alternatively, you can opt out of third-party cookies by visiting{" "}
             <a
               href="https://www.aboutads.info/choices/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline dark:text-dark-blue"
             >
               aboutads.info
             </a>
@@ -109,12 +111,13 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-gray-900">5. Cookies</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+            5. Cookies
+          </h2>
           <p className="mt-2">
             Cookies are small data files stored on your device. We use cookies
-            through third-party services (Google Analytics and Google AdSense)
-            as described above. CalcHub itself does not set any first-party
-            cookies.
+            through third-party services (Google Analytics and Google AdSense) as
+            described above. CalcHub itself does not set any first-party cookies.
           </p>
           <p className="mt-2">
             You can instruct your browser to refuse all cookies or to indicate
@@ -124,7 +127,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
             6. Third-Party Links
           </h2>
           <p className="mt-2">
@@ -135,7 +138,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
             7. Children&apos;s Privacy
           </h2>
           <p className="mt-2">
@@ -146,7 +149,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
             8. Changes to This Policy
           </h2>
           <p className="mt-2">
@@ -158,15 +161,17 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-gray-900">9. Contact</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+            9. Contact
+          </h2>
           <p className="mt-2">
-            If you have questions about this Privacy Policy, please reach out
-            via our{' '}
+            If you have questions about this Privacy Policy, please reach out via
+            our{" "}
             <a
               href="https://github.com/gayoungyeom/calc-hub"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline dark:text-dark-blue"
             >
               GitHub repository
             </a>
@@ -175,6 +180,5 @@ export default function PrivacyPage() {
         </section>
       </div>
     </main>
-    </DefaultLayout>
   );
 }

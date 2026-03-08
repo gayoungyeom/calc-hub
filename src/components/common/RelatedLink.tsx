@@ -13,7 +13,7 @@ export default function RelatedLink({ href, label, from }: Props) {
   return (
     <Link
       href={href}
-      className="text-sm text-blue-600 hover:underline"
+      className="text-sm text-blue-600 hover:underline dark:text-dark-blue"
       onClick={() =>
         trackEvent({
           action: "click_related_calculator",

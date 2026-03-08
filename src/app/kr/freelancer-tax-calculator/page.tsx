@@ -13,20 +13,27 @@ export const metadata: Metadata = {
     "프리랜서 실수령액 계산",
     "종합소득세 환급",
   ],
+  alternates: {
+    languages: {
+      ko: "/kr/freelancer-tax-calculator",
+      en: "/us/1099-tax-calculator",
+      "x-default": "/",
+    },
+  },
 };
 
 export default function KrFreelancerTaxCalculatorPage() {
   return (
     <main className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
           프리랜서 종합소득세 계산기
         </h1>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-gray-600 dark:text-gray-400">
           3.3% 원천징수 기반 프리랜서·N잡러를 위한 종합소득세 간편 계산기입니다.
           예상 환급액과 절세 팁을 확인하세요.
         </p>
-        <p className="mt-1 text-sm text-gray-400">2026년 세법 기준</p>
+        <p className="mt-1 text-sm text-gray-400 dark:text-gray-500">2026년 세법 기준</p>
       </div>
 
       <KrCalculator />

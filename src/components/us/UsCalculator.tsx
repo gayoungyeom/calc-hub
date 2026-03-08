@@ -33,7 +33,7 @@ export default function UsCalculator() {
 
       {result && lastInput && (
         <>
-          <hr className="border-gray-200" />
+          <hr className="border-gray-200 dark:border-dark-border" />
           <UsResultDisplay result={result} />
           <UsInsightPanel
             result={result}
