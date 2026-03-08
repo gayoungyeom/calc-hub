@@ -15,12 +15,7 @@ CalcHub — 프리랜서/N잡러를 위한 KR/US 세금 계산기 플랫폼. 자
 
 ## 커밋/PR 규칙
 
-- **커밋 단위:** PLAN.md의 sub-phase 내 개별 task 1개 = 커밋 1개
-- **PR 단위:** PLAN.md의 sub-phase (예: 1-2, 1-3, 1-4) 완료 시 PR 1개 생성
-- **PR 후 흐름:** PR 생성 → main에 머지 → 다음 sub-phase 브랜치 생성 후 작업 계속
-- **브랜치 네이밍:** `phase{N}/{sub-phase-설명}` (예: `phase1/config-layer`)
-- **커밋 메시지:** 한국어, conventional commits (`feat:`, `fix:`, `refactor:` 등)
-- **Co-Author:** 모든 커밋에 `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>` 포함
+`.claude/rules/workflows.md` 참조.
 
 ## 주요 명령어
 
