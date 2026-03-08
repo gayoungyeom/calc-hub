@@ -4,21 +4,51 @@
     "title": "Uber Driver Tax Calculator 2026",
     "h1": "Uber Driver Tax Calculator",
     "description": "Calculate your taxes as an Uber driver. Get federal, self-employment, and state tax estimates with quarterly payment amounts.",
-    "keywords": ["uber driver tax calculator", "uber 1099 tax", "rideshare tax"]
+    "keywords": ["uber driver tax calculator", "uber 1099 tax", "rideshare tax"],
+    "deductionGuide": {
+      "title": "Common Deductions for Uber Drivers",
+      "items": [
+        "Mileage deduction (67 cents/mile for 2026) or actual vehicle expenses",
+        "Phone and data plan used for the Uber app",
+        "Car insurance, maintenance, and repairs",
+        "Parking and toll fees while driving",
+        "Water, snacks, and supplies for passengers"
+      ]
+    }
   },
   {
     "slug": "doordash-dasher-tax",
     "title": "DoorDash Dasher Tax Calculator 2026",
     "h1": "DoorDash Dasher Tax Calculator",
     "description": "Calculate your taxes as a DoorDash dasher. See your self-employment tax, quarterly payments, and deduction opportunities.",
-    "keywords": ["doordash tax calculator", "dasher tax", "food delivery tax"]
+    "keywords": ["doordash tax calculator", "dasher tax", "food delivery tax"],
+    "deductionGuide": {
+      "title": "Common Deductions for DoorDash Dashers",
+      "items": [
+        "Mileage deduction (67 cents/mile for 2026) — track every delivery mile",
+        "Phone and data plan used for the DoorDash app",
+        "Insulated delivery bags and hot/cold bags",
+        "Car maintenance, gas, and insurance",
+        "Parking fees during deliveries"
+      ]
+    }
   },
   {
     "slug": "freelance-developer-tax",
     "title": "Freelance Developer Tax Calculator 2026",
     "h1": "Freelance Software Developer Tax Calculator",
     "description": "Tax calculator for freelance developers and software engineers. Calculate 1099 taxes with SEP IRA savings estimates.",
-    "keywords": ["freelance developer tax", "software engineer 1099 tax", "contractor developer tax"]
+    "keywords": ["freelance developer tax", "software engineer 1099 tax", "contractor developer tax"],
+    "deductionGuide": {
+      "title": "Common Deductions for Freelance Developers",
+      "items": [
+        "Computer hardware, monitors, and peripherals",
+        "Software subscriptions (IDE, cloud services, hosting)",
+        "Home office deduction (dedicated workspace)",
+        "Internet and phone bills (business portion)",
+        "Professional development, courses, and conferences"
+      ]
+    }
   },
   {
     "slug": "california-1099-tax",
@@ -65,14 +95,34 @@
     "title": "Etsy Seller Tax Calculator 2026",
     "h1": "Etsy Seller Tax Calculator",
     "description": "Calculate your taxes as an Etsy seller. Estimate federal, SE, and state taxes on your Etsy shop income.",
-    "keywords": ["etsy seller tax", "etsy 1099 tax", "etsy shop tax calculator"]
+    "keywords": ["etsy seller tax", "etsy 1099 tax", "etsy shop tax calculator"],
+    "deductionGuide": {
+      "title": "Common Deductions for Etsy Sellers",
+      "items": [
+        "Cost of materials and supplies for your products",
+        "Etsy fees, PayPal/payment processing fees",
+        "Shipping and packaging costs",
+        "Home office or studio space deduction",
+        "Photography equipment for product listings"
+      ]
+    }
   },
   {
     "slug": "content-creator-tax",
     "title": "Content Creator Tax Calculator 2026",
     "h1": "Content Creator & Influencer Tax Calculator",
     "description": "Tax calculator for content creators and influencers. Calculate taxes on sponsorship, ad revenue, and affiliate income.",
-    "keywords": ["content creator tax", "influencer tax calculator", "youtube tax calculator"]
+    "keywords": ["content creator tax", "influencer tax calculator", "youtube tax calculator"],
+    "deductionGuide": {
+      "title": "Common Deductions for Content Creators",
+      "items": [
+        "Camera, lighting, and audio equipment",
+        "Video editing software and subscriptions",
+        "Home studio or office space deduction",
+        "Internet and phone bills (business portion)",
+        "Props, costumes, and product samples for content"
+      ]
+    }
   },
   {
     "slug": "100k-freelancer-tax",
