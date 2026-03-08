@@ -14,22 +14,22 @@ export default function KrResultDisplay({ result, grossIncome }: Props) {
       <div
         className={`rounded-xl p-6 text-center ${
           isRefund
-            ? "bg-green-50 border-2 border-green-200"
-            : "bg-red-50 border-2 border-red-200"
+            ? "bg-green-50 border-2 border-green-200 dark:bg-green-900/20 dark:border-green-800"
+            : "bg-red-50 border-2 border-red-200 dark:bg-red-900/20 dark:border-red-800"
         }`}
       >
-        <p className="text-sm font-medium text-gray-600">
+        <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
           {isRefund ? "예상 환급액" : "추가 납부 예상액"}
         </p>
         <p
           className={`mt-2 text-4xl font-bold ${
-            isRefund ? "text-green-600" : "text-red-600"
+            isRefund ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
           }`}
         >
           {isRefund ? "+" : "-"}
           {formatKRW(Math.abs(result.refundOrDue))}원
         </p>
-        <p className="mt-1 text-xs text-gray-500">
+        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
           {isRefund
             ? "5월 종합소득세 신고 시 돌려받을 수 있는 금액입니다"
             : "5월 종합소득세 신고 시 추가로 납부해야 하는 금액입니다"}
@@ -37,7 +37,7 @@ export default function KrResultDisplay({ result, grossIncome }: Props) {
       </div>
 
       {/* 상세 내역 */}
-      <div className="rounded-xl border border-gray-200 divide-y divide-gray-100">
+      <div className="rounded-xl border border-gray-200 divide-y divide-gray-100 dark:border-gray-700 dark:divide-gray-700">
         <ResultRow label="연간 총수입" value={grossIncome} />
         <ResultRow label="종합소득금액" value={result.totalIncome} />
         <ResultRow label="과세표준" value={result.taxableIncome} />
@@ -76,13 +76,13 @@ function ResultRow({
 }) {
   return (
     <div className="flex justify-between px-5 py-3">
-      <span className={`text-sm ${bold ? "font-semibold text-gray-900" : "text-gray-600"}`}>
+      <span className={`text-sm ${bold ? "font-semibold text-gray-900 dark:text-white" : "text-gray-600 dark:text-gray-400"}`}>
         {label}
       </span>
       <span
         className={`text-sm tabular-nums ${
           bold ? "font-semibold" : ""
-        } ${accent ? "text-green-600" : negative ? "text-red-600" : "text-gray-900"}`}
+        } ${accent ? "text-green-600 dark:text-green-400" : negative ? "text-red-600 dark:text-red-400" : "text-gray-900 dark:text-white"}`}
       >
         {formatKRW(value)}원
       </span>

@@ -58,18 +58,18 @@ export default async function UsLongtailPage({
   return (
     <main className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
           {page.h1}
         </h1>
-        <p className="mt-2 text-gray-600">{page.description}</p>
-        <p className="mt-1 text-sm text-gray-400">2026 Tax Year</p>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">{page.description}</p>
+        <p className="mt-1 text-sm text-gray-400 dark:text-gray-500">2026 Tax Year</p>
       </div>
 
       <UsCalculator />
 
       {/* Related calculators */}
       <section className="mt-12">
-        <h2 className="text-lg font-semibold text-gray-900">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
           Related Tax Calculators
         </h2>
         <ul className="mt-4 space-y-2">
