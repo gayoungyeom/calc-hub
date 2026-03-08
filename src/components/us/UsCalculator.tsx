@@ -38,7 +38,9 @@ export default function UsCalculator() {
           <UsInsightPanel
             result={result}
             grossIncome={lastInput.grossIncome}
+            expenses={lastInput.expenses}
             state={lastInput.state}
+            filingStatus={lastInput.filingStatus}
           />
         </>
       )}
