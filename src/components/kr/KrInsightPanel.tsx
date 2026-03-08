@@ -15,7 +15,7 @@ export default function KrInsightPanel({ result, grossIncome, expenses }: Props)
 
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold text-gray-900">세금 인사이트</h3>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">세금 인사이트</h3>
 
       <div className="grid gap-3">
         {/* 유효세율 */}
@@ -74,13 +74,13 @@ function InsightCard({
   detail: string;
 }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-dark-border dark:bg-dark-card">
       <div className="flex items-start gap-3">
         <span className="text-xl">{emoji}</span>
         <div>
-          <p className="text-sm font-semibold text-gray-900">{title}</p>
-          <p className="mt-1 text-sm text-gray-700">{description}</p>
-          <p className="mt-1 text-xs text-gray-500">{detail}</p>
+          <p className="text-sm font-semibold text-gray-900 dark:text-white">{title}</p>
+          <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">{description}</p>
+          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{detail}</p>
         </div>
       </div>
     </div>

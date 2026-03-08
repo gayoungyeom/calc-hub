@@ -33,7 +33,7 @@ export default function KrCalculator() {
 
       {result && lastInput && (
         <>
-          <hr className="border-gray-200" />
+          <hr className="border-gray-200 dark:border-dark-border" />
           <KrResultDisplay
             result={result}
             grossIncome={lastInput.grossIncome}

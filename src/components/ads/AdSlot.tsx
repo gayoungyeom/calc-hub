@@ -23,7 +23,7 @@ export default function AdSlot({ position, className = "" }: Props) {
   return (
     <div
       data-ad-slot={position}
-      className={`flex items-center justify-center rounded border-2 border-dashed border-gray-300 bg-gray-50 text-xs text-gray-400 ${className}`}
+      className={`flex items-center justify-center rounded border-2 border-dashed border-gray-300 bg-gray-50 text-xs text-gray-400 dark:border-dark-border dark:bg-dark-card dark:text-gray-500 ${className}`}
       style={{ minHeight: position === "top-banner" ? 90 : 250 }}
     >
       AD: {position}

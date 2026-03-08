@@ -47,7 +47,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
     <form onSubmit={handleSubmit} className="space-y-5">
       {/* Annual Gross Income */}
       <div>
-        <label htmlFor="grossIncome" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="grossIncome" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           Annual Gross Income ($)
         </label>
         <input
@@ -57,15 +57,15 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
           placeholder="e.g. 100,000"
           value={grossIncome}
           onChange={(e) => setGrossIncome(formatNumberInput(e.target.value))}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
           required
         />
-        <p className="mt-1 text-xs text-gray-500">Your total 1099 income before expenses</p>
+        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">Your total 1099 income before expenses</p>
       </div>
 
       {/* Business Expenses */}
       <div>
-        <label htmlFor="expenses" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="expenses" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           Business Expenses ($)
         </label>
         <input
@@ -75,20 +75,20 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
           placeholder="0"
           value={expenses}
           onChange={(e) => setExpenses(formatNumberInput(e.target.value))}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
         />
       </div>
 
       {/* Filing Status */}
       <div>
-        <label htmlFor="filingStatus" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="filingStatus" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           Filing Status
         </label>
         <select
           id="filingStatus"
           value={filingStatus}
           onChange={(e) => setFilingStatus(e.target.value as UsFilingStatus)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
         >
           {FILING_STATUSES.map((s) => (
             <option key={s.value} value={s.value}>
@@ -100,14 +100,14 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
 
       {/* State */}
       <div>
-        <label htmlFor="state" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="state" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           State
         </label>
         <select
           id="state"
           value={state}
           onChange={(e) => setState(e.target.value)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
         >
           {STATES.map((s) => (
             <option key={s.value} value={s.value}>
@@ -119,7 +119,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
 
       {/* Deduction Type */}
       <div>
-        <label className="block text-sm font-medium text-gray-700">Deduction Type</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Deduction Type</label>
         <div className="mt-2 flex gap-4">
           <label className="flex items-center gap-2">
             <input
@@ -130,7 +130,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
               onChange={() => setDeductionType("standard")}
               className="text-blue-600 focus:ring-blue-500"
             />
-            <span className="text-sm text-gray-700">Standard</span>
+            <span className="text-sm text-gray-700 dark:text-gray-300">Standard</span>
           </label>
           <label className="flex items-center gap-2">
             <input
@@ -141,7 +141,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
               onChange={() => setDeductionType("itemized")}
               className="text-blue-600 focus:ring-blue-500"
             />
-            <span className="text-sm text-gray-700">Itemized</span>
+            <span className="text-sm text-gray-700 dark:text-gray-300">Itemized</span>
           </label>
         </div>
       </div>
@@ -149,7 +149,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
       {/* Itemized Amount */}
       {deductionType === "itemized" && (
         <div>
-          <label htmlFor="itemizedDeduction" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="itemizedDeduction" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Itemized Deduction Amount ($)
           </label>
           <input
@@ -159,14 +159,14 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
             placeholder="0"
             value={itemizedDeduction}
             onChange={(e) => setItemizedDeduction(formatNumberInput(e.target.value))}
-            className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
           />
         </div>
       )}
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 transition-colors"
+        className="w-full rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 dark:bg-dark-btn dark:hover:bg-dark-btn-hover transition-colors"
       >
         Calculate Tax
       </button>
