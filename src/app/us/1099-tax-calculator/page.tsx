@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import UsCalculator from "@/components/us/UsCalculator";
 import AuthorityBlock from "@/components/authority/AuthorityBlock";
+import RelatedLink from "@/components/common/RelatedLink";
+import usPages from "@/config/longtail/us-pages.json";
 
 export const metadata: Metadata = {
   title: "1099 Self-Employed Tax Calculator 2026 — CalcHub",
@@ -38,6 +40,24 @@ export default function Us1099TaxCalculatorPage() {
       </div>
 
       <UsCalculator />
+
+      {/* Related calculators */}
+      <section className="mt-12">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+          Related Tax Calculators
+        </h2>
+        <ul className="mt-4 space-y-2">
+          {usPages.slice(0, 6).map((p) => (
+            <li key={p.slug}>
+              <RelatedLink
+                href={`/us/${p.slug}`}
+                label={p.h1}
+                from="1099-tax-calculator"
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <AuthorityBlock
         taxYear={2026}
