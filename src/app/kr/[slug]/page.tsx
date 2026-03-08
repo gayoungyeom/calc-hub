@@ -6,12 +6,18 @@ import AuthorityBlock from "@/components/authority/AuthorityBlock";
 import RelatedLink from "@/components/common/RelatedLink";
 import krPages from "@/config/longtail/kr-pages.json";
 
+interface DeductionGuide {
+  title: string;
+  items: string[];
+}
+
 interface PageData {
   slug: string;
   title: string;
   h1: string;
   description: string;
   keywords: string[];
+  deductionGuide?: DeductionGuide;
 }
 
 export function generateStaticParams() {
@@ -65,6 +71,29 @@ export default async function KrLongtailPage({
       </div>
 
       <KrCalculator />
+
+      {/* 경비 항목 가이드 */}
+      {page.deductionGuide && (
+        <section className="mt-12">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+            {page.deductionGuide.title}
+          </h2>
+          <ul className="mt-4 space-y-2">
+            {page.deductionGuide.items.map((item: string, i: number) => (
+              <li
+                key={i}
+                className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
+              >
+                <span className="mt-1 text-green-500">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
+            경비 처리 시 증빙 서류(영수증, 세금계산서)를 반드시 보관하세요. 정확한 경비 인정 범위는 세무사와 상담하시기 바랍니다.
+          </p>
+        </section>
+      )}
 
       {/* 관련 계산기 내부 링크 */}
       <section className="mt-12">
