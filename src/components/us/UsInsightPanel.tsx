@@ -88,7 +88,7 @@ function InsightCard({
   detail: string;
 }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800">
+    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-dark-border dark:bg-dark-card">
       <div className="flex items-start gap-3">
         <span className="text-xl">{emoji}</span>
         <div>

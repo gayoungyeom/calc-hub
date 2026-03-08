@@ -31,7 +31,7 @@ export default function UsHomePage() {
         </p>
         <Link
           href="/us/1099-tax-calculator"
-          className="mt-8 inline-block rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white hover:bg-blue-700 transition-colors"
+          className="mt-8 inline-block rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white hover:bg-blue-700 dark:bg-dark-btn dark:hover:bg-dark-btn-hover transition-colors"
         >
           Calculate Tax
         </Link>
@@ -66,7 +66,7 @@ export default function UsHomePage() {
               <Link
                 key={page.slug}
                 href={`/us/${page.slug}`}
-                className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-gray-700 dark:hover:border-blue-500"
+                className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
               >
                 <h3 className="font-semibold text-gray-900 dark:text-white">
                   {page.h1}

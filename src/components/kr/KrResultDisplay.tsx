@@ -37,7 +37,7 @@ export default function KrResultDisplay({ result, grossIncome }: Props) {
       </div>
 
       {/* 상세 내역 */}
-      <div className="rounded-xl border border-gray-200 divide-y divide-gray-100 dark:border-gray-700 dark:divide-gray-700">
+      <div className="rounded-xl border border-gray-200 divide-y divide-gray-100 dark:border-dark-border dark:divide-dark-border">
         <ResultRow label="연간 총수입" value={grossIncome} />
         <ResultRow label="종합소득금액" value={result.totalIncome} />
         <ResultRow label="과세표준" value={result.taxableIncome} />

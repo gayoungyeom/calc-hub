@@ -43,7 +43,7 @@ export default function KrCalculatorForm({ onCalculate }: Props) {
           placeholder="예: 36,000,000"
           value={grossIncome}
           onChange={(e) => setGrossIncome(formatNumberInput(e.target.value))}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
           required
         />
         <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">3.3% 원천징수 전 총 수입금액</p>
@@ -51,7 +51,7 @@ export default function KrCalculatorForm({ onCalculate }: Props) {
 
       {/* 기납부세액 자동 계산 */}
       {autoPrepaid && grossIncome && (
-        <div className="rounded-lg bg-blue-50 px-4 py-3 text-sm text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+        <div className="rounded-lg bg-blue-50 px-4 py-3 text-sm text-blue-700 dark:bg-dark-blue/15 dark:text-dark-blue">
           기납부세액 (3.3%): <strong>{formatCurrency(Math.round(parseNumber(grossIncome) * 0.033))}원</strong>
         </div>
       )}
@@ -68,7 +68,7 @@ export default function KrCalculatorForm({ onCalculate }: Props) {
           placeholder="0"
           value={expenses}
           onChange={(e) => setExpenses(formatNumberInput(e.target.value))}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
         />
         <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">사업 관련 지출 (선택)</p>
       </div>
@@ -82,7 +82,7 @@ export default function KrCalculatorForm({ onCalculate }: Props) {
           id="dependents"
           value={dependents}
           onChange={(e) => setDependents(e.target.value)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
         >
           {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
             <option key={n} value={n}>
@@ -109,7 +109,7 @@ export default function KrCalculatorForm({ onCalculate }: Props) {
               placeholder="0"
               value={nationalPension}
               onChange={(e) => setNationalPension(formatNumberInput(e.target.value))}
-              className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+              className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
             />
           </div>
           <div>
@@ -123,7 +123,7 @@ export default function KrCalculatorForm({ onCalculate }: Props) {
               placeholder="0"
               value={healthInsurance}
               onChange={(e) => setHealthInsurance(formatNumberInput(e.target.value))}
-              className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+              className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white dark:placeholder-gray-500"
             />
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function KrCalculatorForm({ onCalculate }: Props) {
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 transition-colors"
+        className="w-full rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 dark:bg-dark-btn dark:hover:bg-dark-btn-hover transition-colors"
       >
         세금 계산하기
       </button>
