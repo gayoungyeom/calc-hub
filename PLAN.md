@@ -160,21 +160,23 @@
 
 ### 2-7. 분석 + 광고 기반
 
-- [ ] Google Search Console 사이트 등록 + 소유권 인증
-- [ ] 사이트맵 제출
+- [x] Google Search Console 사이트 등록 + 소유권 인증 _(외부 작업)_
+- [x] 사이트맵 제출 _(Search Console 등록 후)_
 - [x] GA4 프로퍼티 생성 + 추적 코드 삽입
 - [x] 주요 이벤트 추적 설정 (계산 실행, 인사이트 클릭, 관련 계산기 이동)
-- [ ] **AdSense 승인 신청**
-  - 사전 확인: 콘텐츠 충분성, 면책 문구, 개인정보 처리방침, About 페이지
+- [x] **AdSense 승인 신청**
+  - [x] 소유권 확인 메타 태그 삽입 (`ca-pub-4343769094636612`)
+  - [x] 사전 확인: 콘텐츠 충분성, 면책 문구, 개인정보 처리방침, About 페이지
+  - [ ] AdSense 승인 대기 _(외부 작업)_
 
 ### Phase 2 체크포인트
 
-- [ ] KR 계산기 프로덕션 동작 확인 (5개 소득 구간 수동 테스트)
-- [ ] US 계산기 프로덕션 동작 확인 (3개 State × 3개 Filing Status)
-- [ ] Lighthouse: Performance 90+, SEO 90+, Accessibility 90+
+- [x] KR 계산기 프로덕션 동작 확인 (5개 소득 구간 수동 테스트)
+- [x] US 계산기 프로덕션 동작 확인 (3개 State × 3개 Filing Status)
+- [x] Lighthouse: Performance 90+, SEO 90+, Accessibility 90+
 - [ ] Search Console 인덱싱 요청 완료 (메인 + 롱테일 20개)
-- [ ] GA4 이벤트 수신 확인
-- [ ] AdSense 신청 완료
+- [x] GA4 이벤트 수신 확인
+- [x] AdSense 신청 완료 (소유권 메타 태그 삽입, 승인 대기 중)
 
 ---
 
