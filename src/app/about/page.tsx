@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import DefaultLayout from "@/components/layout/DefaultLayout";
 
 export const metadata: Metadata = {
   title: "About — CalcHub",
@@ -7,37 +8,39 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-2xl px-4 py-12 sm:px-6">
-      <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">About CalcHub</h1>
+    <DefaultLayout>
+      <main className="mx-auto max-w-2xl px-4 py-12 sm:px-6">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">About CalcHub</h1>
 
-      <div className="mt-8 space-y-6 text-gray-700 leading-relaxed">
+        <div className="mt-8 space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
           CalcHub은 프리랜서, N잡러, 그리고 자영업자들이 복잡한 세금 계산을
           간편하게 할 수 있도록 만들어진 무료 세금 계산기 플랫폼입니다.
         </p>
 
-        <h2 className="text-lg font-semibold text-gray-900 mt-8">우리의 목표</h2>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mt-8">우리의 목표</h2>
         <p>
           세금 계산은 복잡하고, 홈택스나 IRS 도구는 직관적이지 않습니다. CalcHub은
           정확한 계산 결과뿐 아니라, 절세 팁과 인사이트까지 함께 제공하여
           사용자가 더 나은 재무 결정을 내릴 수 있도록 돕습니다.
         </p>
 
-        <h2 className="text-lg font-semibold text-gray-900 mt-8">계산의 정확성</h2>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mt-8">계산의 정확성</h2>
         <p>
           모든 계산은 각국의 공식 세법을 기반으로 합니다. 한국은 국세청
           종합소득세 세율표와 소득세법을, 미국은 IRS Publication 334와 Schedule SE를
           참조합니다. 세법 변경 시 신속하게 업데이트합니다.
         </p>
 
-        <h2 className="text-lg font-semibold text-gray-900 mt-8">면책 사항</h2>
-        <p className="text-sm text-gray-500">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mt-8">면책 사항</h2>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           CalcHub에서 제공하는 모든 계산 결과는 참고용이며, 법적 효력이 없습니다.
           정확한 세금 신고 및 납부는 반드시 공인 세무사 또는 회계사와 상담하시기
           바랍니다. CalcHub은 계산 결과의 오류로 인한 어떠한 손해에도 책임을 지지
           않습니다.
         </p>
       </div>
-    </main>
+      </main>
+    </DefaultLayout>
   );
 }

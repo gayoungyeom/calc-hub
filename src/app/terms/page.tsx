@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import DefaultLayout from "@/components/layout/DefaultLayout";
 
 export const metadata: Metadata = {
   title: "Terms of Service — CalcHub",
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
+    <DefaultLayout>
     <main className="mx-auto max-w-2xl px-4 py-12 sm:px-6">
       <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
         Terms of Service
@@ -124,5 +126,6 @@ export default function TermsPage() {
         </section>
       </div>
     </main>
+    </DefaultLayout>
   );
 }
