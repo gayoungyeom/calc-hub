@@ -42,6 +42,9 @@ export default function KrCalculator() {
             result={result}
             grossIncome={lastInput.grossIncome}
             expenses={lastInput.expenses}
+            dependents={lastInput.dependents}
+            nationalPension={lastInput.nationalPension}
+            healthInsurance={lastInput.healthInsurance}
           />
         </>
       )}
