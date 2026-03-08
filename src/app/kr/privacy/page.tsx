@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "개인정보처리방침 — CalcHub",
+  title: '개인정보처리방침 — CalcHub',
   description:
-    "CalcHub 개인정보처리방침. 수집하는 정보, 쿠키 사용, 광고 데이터 처리에 대해 안내합니다.",
+    'CalcHub 개인정보처리방침. 수집하는 정보, 쿠키 사용, 광고 데이터 처리에 대해 안내합니다.',
 };
 
 export default function KrPrivacyPage() {
@@ -33,12 +33,12 @@ export default function KrPrivacyPage() {
             2. 수집하는 정보
           </h2>
           <p className="mt-2">
-            CalcHub은 회원가입이나 로그인을 요구하지 않습니다. 이름, 이메일 주소,
-            전화번호 등의 개인 식별 정보를 수집하지 않습니다.
+            CalcHub은 회원가입이나 로그인을 요구하지 않습니다. 이름, 이메일
+            주소, 전화번호 등의 개인 식별 정보를 수집하지 않습니다.
           </p>
           <p className="mt-2">
-            모든 세금 계산은 사용자의 브라우저에서 수행됩니다. 소득 데이터 및 계산
-            입력값은 당사 서버로 전송되거나 저장되지 않습니다.
+            모든 세금 계산은 사용자의 브라우저에서 수행됩니다. 소득 데이터 및
+            계산 입력값은 당사 서버로 전송되거나 저장되지 않습니다.
           </p>
         </section>
 
@@ -58,8 +58,8 @@ export default function KrPrivacyPage() {
             <li>상호작용 이벤트 (버튼 클릭, 계산기 사용 등)</li>
           </ul>
           <p className="mt-2">
-            이 데이터는 집계 및 익명화됩니다. 개별 사용자를 식별하는 데
-            사용하지 않습니다. 자세한 내용은{" "}
+            이 데이터는 집계 및 익명화됩니다. 개별 사용자를 식별하는 데 사용하지
+            않습니다. 자세한 내용은{' '}
             <a
               href="https://policies.google.com/privacy"
               target="_blank"
@@ -82,7 +82,7 @@ export default function KrPrivacyPage() {
             기록을 기반으로 광고를 제공합니다.
           </p>
           <p className="mt-2">
-            맞춤 광고를 원하지 않으시면{" "}
+            맞춤 광고를 원하지 않으시면{' '}
             <a
               href="https://www.google.com/settings/ads"
               target="_blank"
@@ -91,7 +91,7 @@ export default function KrPrivacyPage() {
             >
               Google 광고 설정
             </a>
-            에서 설정을 변경하거나,{" "}
+            에서 설정을 변경하거나,{' '}
             <a
               href="https://www.aboutads.info/choices/"
               target="_blank"
@@ -114,9 +114,9 @@ export default function KrPrivacyPage() {
             사용합니다. CalcHub 자체적으로 자사 쿠키를 설정하지 않습니다.
           </p>
           <p className="mt-2">
-            브라우저에서 모든 쿠키를 거부하거나, 쿠키 전송 시 알림을 받도록 설정할
-            수 있습니다. 다만 쿠키 없이는 일부 서비스 기능이 정상적으로 동작하지
-            않을 수 있습니다.
+            브라우저에서 모든 쿠키를 거부하거나, 쿠키 전송 시 알림을 받도록
+            설정할 수 있습니다. 다만 쿠키 없이는 일부 서비스 기능이 정상적으로
+            동작하지 않을 수 있습니다.
           </p>
         </section>
 
@@ -125,9 +125,9 @@ export default function KrPrivacyPage() {
             6. 외부 링크
           </h2>
           <p className="mt-2">
-            당사 웹사이트에는 참고 목적으로 외부 사이트(예: IRS.gov,
-            국세청)로의 링크가 포함될 수 있습니다. 외부 사이트의 개인정보 보호
-            관행에 대해서는 당사가 책임지지 않습니다.
+            당사 웹사이트에는 참고 목적으로 외부 사이트(예: IRS.gov, 국세청)로의
+            링크가 포함될 수 있습니다. 외부 사이트의 개인정보 보호 관행에
+            대해서는 당사가 책임지지 않습니다.
           </p>
         </section>
 
@@ -157,16 +157,16 @@ export default function KrPrivacyPage() {
             9. 문의
           </h2>
           <p className="mt-2">
-            본 개인정보처리방침에 대한 문의 사항은{" "}
+            본 개인정보처리방침에 대한 문의 사항은{' '}
             <a
-              href="https://github.com/gayoungyeom/calc-hub"
+              href="mailto:gayoungyeom@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline dark:text-dark-blue"
             >
-              GitHub 저장소
+              gayoungyeom@gmail.com
             </a>
-            를 통해 연락해 주세요.
+            을 통해 연락해 주세요.
           </p>
         </section>
       </div>

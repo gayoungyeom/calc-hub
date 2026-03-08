@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Terms of Service — CalcHub",
+  title: 'Terms of Service — CalcHub',
   description:
-    "CalcHub Terms of Service. Service conditions, disclaimers, and intellectual property.",
+    'CalcHub Terms of Service. Service conditions, disclaimers, and intellectual property.',
 };
 
 export default function UsTermsPage() {
@@ -23,8 +23,8 @@ export default function UsTermsPage() {
           </h2>
           <p className="mt-2">
             By accessing and using CalcHub (calchubs.org), you agree to be bound
-            by these Terms of Service. If you do not agree to these terms, please
-            do not use our website.
+            by these Terms of Service. If you do not agree to these terms,
+            please do not use our website.
           </p>
         </section>
 
@@ -34,10 +34,10 @@ export default function UsTermsPage() {
           </h2>
           <p className="mt-2">
             CalcHub provides free online tax calculators for freelancers and
-            self-employed individuals. Our calculators cover Korean comprehensive
-            income tax and US 1099 self-employment tax. All calculations are
-            performed in your browser and are intended for informational and
-            educational purposes only.
+            self-employed individuals. Our calculators cover Korean
+            comprehensive income tax and US 1099 self-employment tax. All
+            calculations are performed in your browser and are intended for
+            informational and educational purposes only.
           </p>
         </section>
 
@@ -64,11 +64,11 @@ export default function UsTermsPage() {
             4. Limitation of Liability
           </h2>
           <p className="mt-2">
-            CalcHub, its operators, and contributors shall not be held liable for
-            any direct, indirect, incidental, or consequential damages arising
-            from the use of or inability to use our Service, including but not
-            limited to financial losses resulting from reliance on calculation
-            results.
+            CalcHub, its operators, and contributors shall not be held liable
+            for any direct, indirect, incidental, or consequential damages
+            arising from the use of or inability to use our Service, including
+            but not limited to financial losses resulting from reliance on
+            calculation results.
           </p>
           <p className="mt-2">
             You acknowledge that you use CalcHub at your own risk and are solely
@@ -94,9 +94,9 @@ export default function UsTermsPage() {
           </h2>
           <p className="mt-2">
             CalcHub uses third-party services including Google Analytics for
-            website analytics and Google AdSense for advertising. Your use of our
-            website is also subject to the terms and privacy policies of these
-            third-party services.
+            website analytics and Google AdSense for advertising. Your use of
+            our website is also subject to the terms and privacy policies of
+            these third-party services.
           </p>
         </section>
 
@@ -117,15 +117,15 @@ export default function UsTermsPage() {
             8. Contact
           </h2>
           <p className="mt-2">
-            If you have questions about these Terms of Service, please reach out
-            via our{" "}
+            If you have questions about these Terms of Service, please contact
+            us at{' '}
             <a
-              href="https://github.com/gayoungyeom/calc-hub"
+              href="mailto: gayoungyeom@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline dark:text-dark-blue"
             >
-              GitHub repository
+              gayoungyeom@gmail.com
             </a>
             .
           </p>
