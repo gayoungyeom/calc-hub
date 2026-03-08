@@ -10,9 +10,15 @@ export default function Footer() {
           <div className="text-sm text-gray-500">
             © {currentYear} CalcHub. All rights reserved.
           </div>
-          <div className="flex gap-6 text-sm text-gray-500">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
             <Link href="/about" className="hover:text-gray-700">
               About
+            </Link>
+            <Link href="/privacy" className="hover:text-gray-700">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-gray-700">
+              Terms of Service
             </Link>
             <Link href="/kr/freelancer-tax-calculator" className="hover:text-gray-700">
               KR 계산기
