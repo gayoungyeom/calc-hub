@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     "프리랜서 실수령액 계산",
     "종합소득세 환급",
   ],
+  alternates: {
+    languages: {
+      ko: "/kr/freelancer-tax-calculator",
+      en: "/us/1099-tax-calculator",
+      "x-default": "/",
+    },
+  },
 };
 
 export default function KrFreelancerTaxCalculatorPage() {

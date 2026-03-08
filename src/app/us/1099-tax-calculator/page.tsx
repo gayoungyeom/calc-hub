@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     "freelance tax calculator 2026",
     "self employment tax",
   ],
+  alternates: {
+    languages: {
+      en: "/us/1099-tax-calculator",
+      ko: "/kr/freelancer-tax-calculator",
+      "x-default": "/",
+    },
+  },
 };
 
 export default function Us1099TaxCalculatorPage() {
