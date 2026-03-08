@@ -45,6 +45,22 @@
     "defaultState": "TX"
   },
   {
+    "slug": "florida-1099-tax",
+    "title": "Florida 1099 Tax Calculator 2026",
+    "h1": "Florida 1099 Self-Employed Tax Calculator",
+    "description": "Calculate your taxes as a 1099 contractor in Florida. FL has no state income tax — keep more of your freelance earnings.",
+    "keywords": ["florida 1099 tax", "FL self employed tax", "florida freelance tax", "florida no income tax"],
+    "defaultState": "FL"
+  },
+  {
+    "slug": "washington-1099-tax",
+    "title": "Washington 1099 Tax Calculator 2026",
+    "h1": "Washington 1099 Self-Employed Tax Calculator",
+    "description": "Calculate your taxes as a 1099 contractor in Washington state. WA has no state income tax — see your total tax burden.",
+    "keywords": ["washington 1099 tax", "WA self employed tax", "washington freelance tax", "washington no income tax"],
+    "defaultState": "WA"
+  },
+  {
     "slug": "etsy-seller-tax",
     "title": "Etsy Seller Tax Calculator 2026",
     "h1": "Etsy Seller Tax Calculator",
