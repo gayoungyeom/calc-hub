@@ -140,7 +140,22 @@
 - [x] 내부 링크 — 관련 계산기 상호 연결
 - [x] 총 20개 롱테일 페이지 배포 확인
 
-### 2-6. 분석 + 광고 기반
+### 2-6. UX 개선 + 다국어 처리
+
+- [x] 로케일 세그먼트 레이아웃 + 동적 lang 설정
+  - `src/lib/locale.ts` — `getLocaleFromPath()` 유틸리티
+  - `src/app/kr/layout.tsx`, `src/app/us/layout.tsx` — 세그먼트 레이아웃
+  - `LocaleUpdater` 클라이언트 컴포넌트로 pathname 기반 `document.documentElement.lang` 동적 설정
+- [x] Header 로케일 대응 (`locale` prop, KR/US 네비게이션 분기)
+- [x] Footer 로케일 대응 (면책 문구 영어/한국어 분기)
+- [x] AuthorityBlock 다국어 지원 (`locale` prop, 라벨 텍스트 분기)
+- [x] 루트 랜딩 페이지 이중언어 재설계 (국가 선택 페이지)
+- [x] KR/US 개별 홈페이지 생성 (`/kr`, `/us`)
+- [x] hreflang 태그 추가 (모든 KR/US 페이지, x-default)
+- [x] 다크 모드 토글 (next-themes, class 기반, 전체 컴포넌트 dark: 클래스)
+- [x] 사이트맵 + 메타데이터 검증 (alternateRefs, 신규 페이지 반영)
+
+### 2-7. 분석 + 광고 기반
 
 - [ ] Google Search Console 사이트 등록 + 소유권 인증
 - [ ] 사이트맵 제출
