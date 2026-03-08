@@ -30,6 +30,13 @@ export function generateMetadata({
       title: `${page.title} — CalcHub`,
       description: page.description,
       keywords: page.keywords,
+      alternates: {
+        languages: {
+          ko: `/kr/${slug}`,
+          en: "/us",
+          "x-default": "/",
+        },
+      },
     };
   });
 }
