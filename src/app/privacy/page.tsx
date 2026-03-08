@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import DefaultLayout from "@/components/layout/DefaultLayout";
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — CalcHub',
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
+    <DefaultLayout>
     <main className="mx-auto max-w-2xl px-4 py-12 sm:px-6">
       <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
         Privacy Policy
@@ -173,5 +175,6 @@ export default function PrivacyPage() {
         </section>
       </div>
     </main>
+    </DefaultLayout>
   );
 }

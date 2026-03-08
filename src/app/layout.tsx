@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import LocaleUpdater from "@/components/layout/LocaleUpdater";
 import { GA_ID } from "@/lib/gtag";
 import "./globals.css";
 
@@ -17,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CalcHub — 프리랜서 세금 계산기",
+  title: "CalcHub — Tax Calculator for Freelancers | 프리랜서 세금 계산기",
   description:
-    "프리랜서와 N잡러를 위한 세금 계산기. 종합소득세 환급액, 1099 Quarterly Tax를 5초 만에 계산하세요.",
+    "프리랜서와 N잡러를 위한 세금 계산기. 종합소득세 환급액, 1099 Quarterly Tax를 5초 만에 계산하세요. Free tax calculator for freelancers and self-employed.",
 };
 
 export default function RootLayout({
@@ -28,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -46,9 +45,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen flex-col`}
       >
-        <Header />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        <LocaleUpdater />
+        {children}
       </body>
     </html>
   );
