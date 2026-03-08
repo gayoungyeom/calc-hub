@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "이용약관 — CalcHub",
+  title: '이용약관 — CalcHub',
   description:
-    "CalcHub 이용약관. 서비스 이용 조건, 면책 사항, 지적재산권에 대해 안내합니다.",
+    'CalcHub 이용약관. 서비스 이용 조건, 면책 사항, 지적재산권에 대해 안내합니다.',
 };
 
 export default function KrTermsPage() {
@@ -45,8 +45,8 @@ export default function KrTermsPage() {
             3. 정확성에 대한 면책
           </h2>
           <p className="mt-2">
-            당사는 공식 세법 및 규정에 기반하여 세금 계산의 정확성을 보장하기 위해
-            노력하지만, 계산 결과의 정확성, 완전성 또는 적시성을 보장하지
+            당사는 공식 세법 및 규정에 기반하여 세금 계산의 정확성을 보장하기
+            위해 노력하지만, 계산 결과의 정확성, 완전성 또는 적시성을 보장하지
             않습니다.
           </p>
           <p className="mt-2">
@@ -110,16 +110,16 @@ export default function KrTermsPage() {
             8. 문의
           </h2>
           <p className="mt-2">
-            본 이용약관에 대한 문의 사항은{" "}
+            본 이용약관에 대한 문의 사항은{' '}
             <a
-              href="https://github.com/gayoungyeom/calc-hub"
+              href="mailto: gayoungyeom@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline dark:text-dark-blue"
             >
-              GitHub 저장소
+              gayoungyeom@gmail.com
             </a>
-            를 통해 연락해 주세요.
+            을 통해 연락해 주세요.
           </p>
         </section>
       </div>

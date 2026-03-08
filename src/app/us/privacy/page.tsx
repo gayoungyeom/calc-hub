@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — CalcHub",
+  title: 'Privacy Policy — CalcHub',
   description:
-    "CalcHub Privacy Policy. Learn about the information we collect, cookie usage, and advertising data processing.",
+    'CalcHub Privacy Policy. Learn about the information we collect, cookie usage, and advertising data processing.',
 };
 
 export default function UsPrivacyPage() {
@@ -22,10 +22,10 @@ export default function UsPrivacyPage() {
             1. Overview
           </h2>
           <p className="mt-2">
-            CalcHub (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) operates the
-            website calchubs.org. This page informs you of our policies regarding
-            the collection, use, and disclosure of information when you use our
-            Service.
+            CalcHub (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) operates
+            the website calchubs.org. This page informs you of our policies
+            regarding the collection, use, and disclosure of information when
+            you use our Service.
           </p>
         </section>
 
@@ -40,8 +40,8 @@ export default function UsPrivacyPage() {
           </p>
           <p className="mt-2">
             All tax calculations are performed entirely in your browser. Your
-            income data and calculation inputs are never sent to or stored on our
-            servers.
+            income data and calculation inputs are never sent to or stored on
+            our servers.
           </p>
         </section>
 
@@ -63,7 +63,7 @@ export default function UsPrivacyPage() {
           </ul>
           <p className="mt-2">
             This data is aggregated and anonymized. We do not use it to identify
-            individual users. For more information, see{" "}
+            individual users. For more information, see{' '}
             <a
               href="https://policies.google.com/privacy"
               target="_blank"
@@ -88,7 +88,7 @@ export default function UsPrivacyPage() {
             based on your browsing history.
           </p>
           <p className="mt-2">
-            You may opt out of personalized advertising by visiting{" "}
+            You may opt out of personalized advertising by visiting{' '}
             <a
               href="https://www.google.com/settings/ads"
               target="_blank"
@@ -97,7 +97,7 @@ export default function UsPrivacyPage() {
             >
               Google Ads Settings
             </a>
-            . Alternatively, you can opt out of third-party cookies by visiting{" "}
+            . Alternatively, you can opt out of third-party cookies by visiting{' '}
             <a
               href="https://www.aboutads.info/choices/"
               target="_blank"
@@ -116,8 +116,9 @@ export default function UsPrivacyPage() {
           </h2>
           <p className="mt-2">
             Cookies are small data files stored on your device. We use cookies
-            through third-party services (Google Analytics and Google AdSense) as
-            described above. CalcHub itself does not set any first-party cookies.
+            through third-party services (Google Analytics and Google AdSense)
+            as described above. CalcHub itself does not set any first-party
+            cookies.
           </p>
           <p className="mt-2">
             You can instruct your browser to refuse all cookies or to indicate
@@ -165,15 +166,15 @@ export default function UsPrivacyPage() {
             9. Contact
           </h2>
           <p className="mt-2">
-            If you have questions about this Privacy Policy, please reach out via
-            our{" "}
+            If you have questions about these Terms of Service, please contact
+            us at{' '}
             <a
-              href="https://github.com/gayoungyeom/calc-hub"
+              href="mailto: gayoungyeom@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline dark:text-dark-blue"
             >
-              GitHub repository
+              gayoungyeom@gmail.com
             </a>
             .
           </p>
