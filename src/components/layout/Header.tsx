@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/locale";
+import DarkModeToggle from "./DarkModeToggle";
 
 interface Props {
   locale?: Locale;
@@ -17,7 +18,7 @@ export default function Header({ locale = "en" }: Props) {
         >
           CalcHub
         </Link>
-        <div className="flex items-center gap-6 text-sm font-medium">
+        <div className="flex items-center gap-4 text-sm font-medium sm:gap-6">
           {isKo ? (
             <>
               <Link
@@ -49,6 +50,7 @@ export default function Header({ locale = "en" }: Props) {
               </Link>
             </>
           )}
+          <DarkModeToggle />
         </div>
       </nav>
     </header>

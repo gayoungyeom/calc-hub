@@ -26,15 +26,15 @@ export default function Us1099TaxCalculatorPage() {
   return (
     <main className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
           1099 Self-Employed Tax Calculator
         </h1>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-gray-600 dark:text-gray-400">
           Calculate your federal, self-employment, and state taxes as a 1099
           contractor. See your quarterly estimated payments and tax-saving
           insights.
         </p>
-        <p className="mt-1 text-sm text-gray-400">2026 Tax Year</p>
+        <p className="mt-1 text-sm text-gray-400 dark:text-gray-500">2026 Tax Year</p>
       </div>
 
       <UsCalculator />

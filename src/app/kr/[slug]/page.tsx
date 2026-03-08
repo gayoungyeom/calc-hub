@@ -57,18 +57,18 @@ export default async function KrLongtailPage({
   return (
     <main className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
           {page.h1}
         </h1>
-        <p className="mt-2 text-gray-600">{page.description}</p>
-        <p className="mt-1 text-sm text-gray-400">2026년 세법 기준</p>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">{page.description}</p>
+        <p className="mt-1 text-sm text-gray-400 dark:text-gray-500">2026년 세법 기준</p>
       </div>
 
       <KrCalculator />
 
       {/* 관련 계산기 내부 링크 */}
       <section className="mt-12">
-        <h2 className="text-lg font-semibold text-gray-900">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
           관련 세금 계산기
         </h2>
         <ul className="mt-4 space-y-2">

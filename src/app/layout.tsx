@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import LocaleUpdater from "@/components/layout/LocaleUpdater";
+import ThemeProvider from "@/components/layout/ThemeProvider";
 import { GA_ID } from "@/lib/gtag";
 import "./globals.css";
 
@@ -45,8 +46,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen flex-col`}
       >
-        <LocaleUpdater />
-        {children}
+        <ThemeProvider>
+          <LocaleUpdater />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
