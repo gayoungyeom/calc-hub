@@ -137,5 +137,53 @@
     "h1": "Tax Calculator for $50,000 Freelance Income",
     "description": "Calculate taxes on $50,000 freelance income. See your tax breakdown, quarterly payments, and potential deductions.",
     "keywords": ["50k freelancer tax", "50000 self employed tax"]
+  },
+  {
+    "slug": "photographer-tax",
+    "title": "Freelance Photographer Tax Calculator 2026",
+    "h1": "Freelance Photographer Tax Calculator",
+    "description": "Calculate your taxes as a freelance photographer. Estimate federal, SE, and state taxes on your photography income.",
+    "keywords": ["photographer tax calculator", "freelance photographer tax", "photography 1099 tax"],
+    "deductionGuide": {
+      "title": "Common Deductions for Freelance Photographers",
+      "items": [
+        "Camera bodies, lenses, and lighting equipment",
+        "Editing software (Lightroom, Photoshop subscriptions)",
+        "Travel expenses for on-location shoots",
+        "Home studio or office space deduction",
+        "Props, backdrops, and printing costs"
+      ]
+    }
+  },
+  {
+    "slug": "graphic-designer-tax",
+    "title": "Freelance Graphic Designer Tax Calculator 2026",
+    "h1": "Freelance Graphic Designer Tax Calculator",
+    "description": "Tax calculator for freelance graphic designers. Calculate your 1099 taxes with deduction tips for design professionals.",
+    "keywords": ["graphic designer tax", "freelance designer tax", "designer 1099 tax"],
+    "deductionGuide": {
+      "title": "Common Deductions for Graphic Designers",
+      "items": [
+        "Design software subscriptions (Adobe Creative Suite, Figma)",
+        "Computer hardware and drawing tablets",
+        "Stock photo and font license subscriptions",
+        "Home office deduction",
+        "Client meeting expenses and portfolio hosting"
+      ]
+    }
+  },
+  {
+    "slug": "200k-freelancer-tax",
+    "title": "$200K Freelancer Tax Calculator 2026",
+    "h1": "Tax Calculator for $200,000 Freelance Income",
+    "description": "See how much tax you owe on $200,000 freelance income. High-income tax strategies, SEP IRA savings, and quarterly payment schedule.",
+    "keywords": ["200k freelancer tax", "200000 self employed tax", "high income freelance tax"]
+  },
+  {
+    "slug": "consultant-tax",
+    "title": "Independent Consultant Tax Calculator 2026",
+    "h1": "Independent Consultant Tax Calculator",
+    "description": "Calculate your taxes as an independent consultant. Get federal, SE, and state tax estimates for your consulting income.",
+    "keywords": ["consultant tax calculator", "independent consultant tax", "consulting 1099 tax"]
   }
 ]
