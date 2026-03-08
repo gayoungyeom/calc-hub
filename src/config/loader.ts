@@ -1,9 +1,11 @@
 import type { KrTaxConfig, UsTaxConfig } from "@/engine/types";
 
+import kr2025 from "./kr/2025.json";
 import kr2026 from "./kr/2026.json";
 import us2026 from "./us/2026.json";
 
 const krConfigs: Record<number, KrTaxConfig> = {
+  2025: kr2025 as KrTaxConfig,
   2026: kr2026 as KrTaxConfig,
 };
 
