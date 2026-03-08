@@ -88,6 +88,7 @@ export default async function UsLongtailPage({
       <AuthorityBlock
         taxYear={2026}
         lastUpdated="2026-01-10"
+        locale="en"
         sources={[
           {
             label: "IRS Publication 334 — Tax Guide for Small Business",
