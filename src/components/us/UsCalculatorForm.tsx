@@ -5,6 +5,7 @@ import type { UsCalculatorInput, UsFilingStatus } from "@/engine/types";
 
 interface Props {
   onCalculate: (input: UsCalculatorInput) => void;
+  defaultState?: string;
 }
 
 const FILING_STATUSES: { value: UsFilingStatus; label: string }[] = [
@@ -15,15 +16,17 @@ const FILING_STATUSES: { value: UsFilingStatus; label: string }[] = [
 
 const STATES = [
   { value: "CA", label: "California" },
+  { value: "FL", label: "Florida" },
   { value: "NY", label: "New York" },
   { value: "TX", label: "Texas" },
+  { value: "WA", label: "Washington" },
 ];
 
-export default function UsCalculatorForm({ onCalculate }: Props) {
+export default function UsCalculatorForm({ onCalculate, defaultState }: Props) {
   const [grossIncome, setGrossIncome] = useState("");
   const [expenses, setExpenses] = useState("");
   const [filingStatus, setFilingStatus] = useState<UsFilingStatus>("single");
-  const [state, setState] = useState("CA");
+  const [state, setState] = useState(defaultState ?? "CA");
   const [deductionType, setDeductionType] = useState<"standard" | "itemized">("standard");
   const [itemizedDeduction, setItemizedDeduction] = useState("");
 
@@ -88,7 +91,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
           id="filingStatus"
           value={filingStatus}
           onChange={(e) => setFilingStatus(e.target.value as UsFilingStatus)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
+          className="custom-select mt-1 block w-full cursor-pointer rounded-lg border border-gray-300 px-4 py-3 pr-10 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
         >
           {FILING_STATUSES.map((s) => (
             <option key={s.value} value={s.value}>
@@ -107,7 +110,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
           id="state"
           value={state}
           onChange={(e) => setState(e.target.value)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
+          className="custom-select mt-1 block w-full cursor-pointer rounded-lg border border-gray-300 px-4 py-3 pr-10 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
         >
           {STATES.map((s) => (
             <option key={s.value} value={s.value}>
@@ -128,7 +131,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
               value="standard"
               checked={deductionType === "standard"}
               onChange={() => setDeductionType("standard")}
-              className="text-blue-600 focus:ring-blue-500"
+              className="cursor-pointer text-blue-600 focus:ring-blue-500"
             />
             <span className="text-sm text-gray-700 dark:text-gray-300">Standard</span>
           </label>
@@ -139,7 +142,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
               value="itemized"
               checked={deductionType === "itemized"}
               onChange={() => setDeductionType("itemized")}
-              className="text-blue-600 focus:ring-blue-500"
+              className="cursor-pointer text-blue-600 focus:ring-blue-500"
             />
             <span className="text-sm text-gray-700 dark:text-gray-300">Itemized</span>
           </label>
@@ -166,7 +169,7 @@ export default function UsCalculatorForm({ onCalculate }: Props) {
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 dark:bg-dark-btn dark:hover:bg-dark-btn-hover transition-colors"
+        className="w-full cursor-pointer rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 dark:bg-dark-btn dark:hover:bg-dark-btn-hover transition-colors"
       >
         Calculate Tax
       </button>
