@@ -91,7 +91,7 @@ export default function UsCalculatorForm({ onCalculate, defaultState }: Props) {
           id="filingStatus"
           value={filingStatus}
           onChange={(e) => setFilingStatus(e.target.value as UsFilingStatus)}
-          className="mt-1 block w-full cursor-pointer rounded-lg border border-gray-300 px-4 py-3 pr-10 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
+          className="custom-select mt-1 block w-full cursor-pointer rounded-lg border border-gray-300 px-4 py-3 pr-10 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
         >
           {FILING_STATUSES.map((s) => (
             <option key={s.value} value={s.value}>
@@ -110,7 +110,7 @@ export default function UsCalculatorForm({ onCalculate, defaultState }: Props) {
           id="state"
           value={state}
           onChange={(e) => setState(e.target.value)}
-          className="mt-1 block w-full cursor-pointer rounded-lg border border-gray-300 px-4 py-3 pr-10 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
+          className="custom-select mt-1 block w-full cursor-pointer rounded-lg border border-gray-300 px-4 py-3 pr-10 focus:border-blue-500 focus:ring-blue-500 dark:border-dark-border dark:bg-dark-card dark:text-white"
         >
           {STATES.map((s) => (
             <option key={s.value} value={s.value}>
