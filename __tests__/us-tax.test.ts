@@ -133,6 +133,32 @@ describe("US 1099 Self-Employed Tax 계산", () => {
     }
   });
 
+  test("$80,000 / FL — State Tax 없음 (TX와 동일)", () => {
+    const fl = calculateUsTax(
+      makeInput({ grossIncome: 80000, state: "FL" }),
+      config
+    );
+    const tx = calculateUsTax(
+      makeInput({ grossIncome: 80000, state: "TX" }),
+      config
+    );
+    expect(fl.stateTax).toBe(0);
+    expect(fl.totalTax).toBe(tx.totalTax);
+  });
+
+  test("$80,000 / WA — State Tax 없음 (TX와 동일)", () => {
+    const wa = calculateUsTax(
+      makeInput({ grossIncome: 80000, state: "WA" }),
+      config
+    );
+    const tx = calculateUsTax(
+      makeInput({ grossIncome: 80000, state: "TX" }),
+      config
+    );
+    expect(wa.stateTax).toBe(0);
+    expect(wa.totalTax).toBe(tx.totalTax);
+  });
+
   test("Head of Household Filing Status", () => {
     const result = calculateUsTax(
       makeInput({

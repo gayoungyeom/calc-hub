@@ -11,7 +11,11 @@ import UsInsightPanel from "./UsInsightPanel";
 
 const config = getUsConfig(2026);
 
-export default function UsCalculator() {
+interface Props {
+  defaultState?: string;
+}
+
+export default function UsCalculator({ defaultState }: Props = {}) {
   const [result, setResult] = useState<UsCalculatorOutput | null>(null);
   const [lastInput, setLastInput] = useState<UsCalculatorInput | null>(null);
 
@@ -29,7 +33,7 @@ export default function UsCalculator() {
 
   return (
     <div className="space-y-8">
-      <UsCalculatorForm onCalculate={handleCalculate} />
+      <UsCalculatorForm onCalculate={handleCalculate} defaultState={defaultState} />
 
       {result && lastInput && (
         <>

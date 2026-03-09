@@ -74,16 +74,28 @@
       "name": "Texas",
       "noIncomeTax": true,
       "brackets": []
+    },
+    "FL": {
+      "name": "Florida",
+      "noIncomeTax": true,
+      "brackets": []
+    },
+    "WA": {
+      "name": "Washington",
+      "noIncomeTax": true,
+      "brackets": []
     }
   },
   "meta": {
-    "lastUpdated": "2026-01-10",
+    "lastUpdated": "2026-03-08",
     "sources": [
       "https://www.irs.gov — IRS Publication 334",
       "https://www.irs.gov — IRS Schedule SE",
       "https://www.ftb.ca.gov — California FTB",
       "https://www.tax.ny.gov — New York State Tax",
-      "https://comptroller.texas.gov — Texas Comptroller"
+      "https://comptroller.texas.gov — Texas Comptroller",
+      "https://floridarevenue.com — Florida Department of Revenue",
+      "https://dor.wa.gov — Washington Department of Revenue"
     ]
   }
 }
