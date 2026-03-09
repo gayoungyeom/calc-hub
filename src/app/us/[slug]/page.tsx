@@ -71,7 +71,7 @@ export default async function UsLongtailPage({
         <p className="mt-1 text-sm text-gray-400 dark:text-gray-500">2026 Tax Year</p>
       </div>
 
-      <UsCalculator />
+      <UsCalculator defaultState={page.defaultState} />
 
       {/* Deduction Guide */}
       {page.deductionGuide && (
