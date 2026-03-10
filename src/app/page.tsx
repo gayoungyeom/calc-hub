@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CalcHub — Tax Calculator for Freelancers | 프리랜서 세금 계산기",
+  title: "CalcHub — Smart Tax Calculators | 세금 계산, 5초면 충분합니다",
   description:
-    "Free tax calculator for freelancers and self-employed. 프리랜서와 N잡러를 위한 세금 계산기. Calculate Korean income tax refunds and US 1099 quarterly taxes in 5 seconds.",
+    "Free tax calculators for freelancers, employees, and business owners. 프리랜서, 직장인, 사업자를 위한 세금 계산기. Calculate Korean income tax and US 1099 taxes in 5 seconds.",
   alternates: {
     languages: {
       ko: "/kr",
@@ -22,9 +22,9 @@ export default function Home() {
         CalcHub
       </h1>
       <p className="mt-4 text-center text-lg text-gray-600 dark:text-gray-400">
-        Tax Calculator for Freelancers
+        Smart Tax Calculators
         <br />
-        프리랜서 세금 계산기
+        세금 계산, 5초면 충분합니다
       </p>
 
       {/* Country Selection */}
@@ -38,10 +38,10 @@ export default function Home() {
             한국
           </h2>
           <p className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
-            종합소득세 계산기
+            세금 계산기
           </p>
           <p className="mt-1 text-center text-xs text-gray-400 dark:text-gray-500">
-            3.3% 환급액 · 절세 인사이트
+            종합소득세 · 근로소득세 · 부가가치세 · 퇴직금
           </p>
         </Link>
 
@@ -54,10 +54,10 @@ export default function Home() {
             United States
           </h2>
           <p className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
-            1099 Tax Calculator
+            Tax Calculators
           </p>
           <p className="mt-1 text-center text-xs text-gray-400 dark:text-gray-500">
-            Federal · SE · State Tax
+            1099 · W-2 vs 1099 · Home Office · Mileage
           </p>
         </Link>
       </div>

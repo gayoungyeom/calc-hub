@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import usPages from "@/config/longtail/us-pages.json";
 
 export const metadata: Metadata = {
-  title: "1099 Tax Calculator for Self-Employed — CalcHub",
+  title: "Tax Calculators for Self-Employed — CalcHub",
   description:
-    "Free 1099 tax calculator for freelancers and self-employed. Calculate federal, self-employment, and state taxes. Get quarterly estimated payments instantly. 2026 tax year.",
+    "Free tax calculators for freelancers and self-employed. 1099 taxes, W-2 vs 1099 comparison, home office and mileage deductions. Get instant results. 2026 tax year.",
   alternates: {
     languages: {
       ko: "/kr",
@@ -21,13 +21,13 @@ export default function UsHomePage() {
       {/* Hero */}
       <section className="text-center">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
-          Calculate Your 1099 Taxes
-          <br className="sm:hidden" /> in 5 Seconds
+          Tax Calculators
+          <br className="sm:hidden" /> for Self-Employed
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-          Federal, self-employment, and state taxes for freelancers.
+          1099, deductions, and comparisons — all in one place.
           <br />
-          Get quarterly payment amounts and tax-saving insights.
+          Get instant results and tax-saving insights.
         </p>
         <Link
           href="/us/1099-tax-calculator"
