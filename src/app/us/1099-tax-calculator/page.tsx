@@ -72,7 +72,16 @@ export default function Us1099TaxCalculatorPage() {
           Related Tax Calculators
         </h2>
         <ul className="mt-4 space-y-2">
-          {usPages.slice(0, 6).map((p) => (
+          <li>
+            <RelatedLink href="/us/w2-vs-1099-calculator" label="W-2 vs 1099 Comparison Calculator" from="1099-tax-calculator" />
+          </li>
+          <li>
+            <RelatedLink href="/us/home-office-deduction-calculator" label="Home Office Deduction Calculator" from="1099-tax-calculator" />
+          </li>
+          <li>
+            <RelatedLink href="/us/mileage-deduction-calculator" label="Mileage Deduction Calculator" from="1099-tax-calculator" />
+          </li>
+          {usPages.slice(0, 4).map((p) => (
             <li key={p.slug}>
               <RelatedLink
                 href={`/us/${p.slug}`}
