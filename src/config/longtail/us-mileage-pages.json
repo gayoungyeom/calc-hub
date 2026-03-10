@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "uber-lyft-driver-mileage",
+    "title": "Uber & Lyft Driver Mileage Deduction Calculator 2026",
+    "h1": "Uber & Lyft Driver Mileage Deduction",
+    "description": "Calculate your rideshare mileage deduction as an Uber or Lyft driver. Standard Mileage Rate vs Actual Expenses comparison.",
+    "keywords": ["uber mileage deduction", "lyft mileage deduction", "rideshare driver mileage tax"],
+    "faq": [
+      {
+        "question": "What miles can Uber/Lyft drivers deduct?",
+        "answer": "You can deduct miles driven while the app is on (waiting for rides), driving to pick up passengers, driving passengers to destinations, and driving between ride requests. You CANNOT deduct miles driving from home to your first pickup or from your last drop-off to home (commuting)."
+      },
+      {
+        "question": "How many miles does the average Uber driver drive per year?",
+        "answer": "Full-time Uber/Lyft drivers typically drive 30,000-50,000 miles per year for business. At the 2026 rate of $0.67/mile, this equals $20,100-$33,500 in deductions — often the single largest tax write-off for rideshare drivers."
+      },
+      {
+        "question": "Should Uber drivers use Standard Mileage or Actual Expenses?",
+        "answer": "Most rideshare drivers benefit from the Standard Mileage Rate because of their high mileage. With 30,000+ business miles, the standard deduction exceeds most drivers' actual vehicle costs. The standard rate is also far simpler — just track your miles."
+      }
+    ]
+  },
+  {
+    "slug": "doordash-delivery-mileage",
+    "title": "DoorDash & Delivery Driver Mileage Deduction Calculator 2026",
+    "h1": "DoorDash & Delivery Driver Mileage Deduction",
+    "description": "Calculate your delivery driver mileage deduction. Track miles for DoorDash, Instacart, Amazon Flex, and other delivery apps.",
+    "keywords": ["doordash mileage deduction", "delivery driver mileage", "instacart mileage deduction"],
+    "faq": [
+      {
+        "question": "What miles can DoorDash drivers deduct?",
+        "answer": "Deductible miles include: driving to the restaurant, driving from restaurant to customer, driving between deliveries, and driving while the app is on waiting for orders. Miles from home to your first delivery location and from your last delivery back home are generally not deductible."
+      },
+      {
+        "question": "Can I deduct mileage for multiple delivery apps?",
+        "answer": "Yes, all business miles across all delivery apps (DoorDash, Uber Eats, Instacart, Grubhub, Amazon Flex) are combined. If you drive for multiple apps simultaneously, track the total business miles — you don't need to separate them by app."
+      },
+      {
+        "question": "Is it better to use a separate car for deliveries?",
+        "answer": "Using a dedicated vehicle simplifies tracking — 100% of miles are business miles. If you use one car for both personal and business, you need to accurately track and separate business miles. A mileage tracking app can automate this."
+      }
+    ]
+  },
+  {
+    "slug": "real-estate-agent-mileage",
+    "title": "Real Estate Agent Mileage Deduction Calculator 2026",
+    "h1": "Real Estate Agent Mileage Deduction",
+    "description": "Calculate your real estate agent mileage deduction. Track miles for property showings, client meetings, and open houses.",
+    "keywords": ["real estate agent mileage deduction", "realtor mileage tax", "real estate mileage deduction"],
+    "faq": [
+      {
+        "question": "What miles can real estate agents deduct?",
+        "answer": "Deductible miles include: driving to/from property showings, traveling to client meetings, attending open houses, visiting the title company, driving to real estate classes (continuing education), and trips to buy supplies. Miles from home to your brokerage office are commuting and not deductible."
+      },
+      {
+        "question": "How many miles do real estate agents typically drive?",
+        "answer": "Active real estate agents typically drive 15,000-25,000 business miles per year. At $0.67/mile, this equals $10,050-$16,750 in deductions. High-volume agents in large metro areas may exceed 30,000 business miles."
+      },
+      {
+        "question": "Can agents who work from home deduct more miles?",
+        "answer": "Yes! If your home is your principal place of business (which is common for real estate agents), driving from home to any property showing, client meeting, or business errand is deductible — not just trips between locations. This can significantly increase your deductible miles."
+      }
+    ]
+  }
+]

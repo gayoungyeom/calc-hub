@@ -348,27 +348,27 @@
 
 **계산기 1: W-2 vs 1099 비교 계산기**
 
-- [ ] 계산 엔진 구현 (`src/engine/us/w2-vs-1099.ts`) — 동일 소득에 대해 W-2 세금 vs 1099 세금 비교
-- [ ] 단위 테스트 작성 (`__tests__/us-w2-vs-1099.test.ts`)
-- [ ] UI 구현 — 입력폼 (연소득, Filing Status, State), 나란히 비교 결과 표시
-- [ ] 페이지 생성 (`/us/w2-vs-1099-calculator`) + SEO 메타데이터
-- [ ] 롱테일 페이지 3개 — $50K/$100K/$150K 비교
+- [x] 계산 엔진 구현 (`src/engine/us/w2-vs-1099.ts`) — W-2(FICA 7.65%) vs 1099(SE Tax 15.3%) 비교
+- [x] 단위 테스트 작성 (`__tests__/us-w2-vs-1099.test.ts`) — 8개 테스트
+- [x] UI 구현 — 입력폼 (연소득, Filing Status, State), side-by-side 비교 결과 표시
+- [x] 페이지 생성 (`/us/w2-vs-1099-calculator`) + SEO 메타데이터
+- [x] 롱테일 페이지 3개 — $50K/$100K/$150K 비교
 
 **계산기 2: Home Office Deduction 계산기**
 
-- [ ] 계산 엔진 구현 (`src/engine/us/home-office.ts`) — Simplified Method ($5/sqft, max 300) vs Regular Method (실제 비용 비례)
-- [ ] 단위 테스트 작성 (`__tests__/us-home-office.test.ts`)
-- [ ] UI 구현 — 입력폼 (집 면적, 오피스 면적, 임대료/모기지, 유틸리티), 두 방법 비교 결과
-- [ ] 페이지 생성 (`/us/home-office-deduction-calculator`) + SEO 메타데이터
-- [ ] 롱테일 페이지 3개 — Apartment, House, Coworking 비교
+- [x] 계산 엔진 구현 (`src/engine/us/home-office.ts`) — Simplified ($5/sqft, max 300) vs Regular (실제 비용 비례)
+- [x] 단위 테스트 작성 (`__tests__/us-home-office.test.ts`) — 7개 테스트
+- [x] UI 구현 — 입력폼 (집 면적, 오피스 면적, 임대료/모기지, 유틸리티), 두 방법 비교 결과
+- [x] 페이지 생성 (`/us/home-office-deduction-calculator`) + SEO 메타데이터
+- [x] 롱테일 페이지 3개 — Apartment, House, Coworking 비교
 
 **계산기 3: Mileage Deduction 계산기**
 
-- [ ] 계산 엔진 구현 (`src/engine/us/mileage.ts`) — Standard Mileage Rate vs Actual Expenses 비교
-- [ ] 단위 테스트 작성 (`__tests__/us-mileage.test.ts`)
-- [ ] UI 구현 — 입력폼 (연간 마일수, 차량 비용), 두 방법 비교 결과
-- [ ] 페이지 생성 (`/us/mileage-deduction-calculator`) + SEO 메타데이터
-- [ ] 롱테일 페이지 3개 — Uber/DoorDash Driver, Freelancer, Real Estate Agent
+- [x] 계산 엔진 구현 (`src/engine/us/mileage.ts`) — Standard Mileage Rate ($0.67/mi) vs Actual Expenses 비교
+- [x] 단위 테스트 작성 (`__tests__/us-mileage.test.ts`) — 8개 테스트
+- [x] UI 구현 — 입력폼 (연간 마일수, 차량 비용), 두 방법 비교 결과
+- [x] 페이지 생성 (`/us/mileage-deduction-calculator`) + SEO 메타데이터
+- [x] 롱테일 페이지 3개 — Uber/DoorDash Driver, Freelancer, Real Estate Agent
 
 ### 5-3. Programmatic SEO 대규모 확장
 
