@@ -55,8 +55,36 @@ export default function KrHomePage() {
         </div>
       </section>
 
-      {/* Longtail Link Grid */}
+      {/* 세금 계산기 목록 */}
       <section className="mt-16">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+          세금 계산기
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            { href: "/kr/freelancer-tax-calculator", title: "종합소득세 계산기", desc: "3.3% 원천징수 프리랜서를 위한 종합소득세 간편 계산" },
+            { href: "/kr/earned-income-tax-calculator", title: "근로소득세 계산기", desc: "직장인 연봉별 실수령액, 원천징수, 세액공제 계산" },
+            { href: "/kr/vat-calculator", title: "부가가치세 계산기", desc: "일반과세자·간이과세자 부가가치세 납부액 계산" },
+            { href: "/kr/severance-calculator", title: "퇴직금 계산기", desc: "재직기간·급여 기반 퇴직금 및 퇴직소득세 계산" },
+          ].map((calc) => (
+            <Link
+              key={calc.href}
+              href={calc.href}
+              className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
+            >
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                {calc.title}
+              </h3>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                {calc.desc}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Longtail Link Grid */}
+      <section className="mt-12">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white">
           직군별 · 소득별 세금 계산기
         </h2>
