@@ -2,7 +2,32 @@ import type { Metadata } from "next";
 import KrCalculator from "@/components/kr/KrCalculator";
 import AuthorityBlock from "@/components/authority/AuthorityBlock";
 import RelatedLink from "@/components/common/RelatedLink";
+import FaqSection from "@/components/common/FaqSection";
+import FaqSchema from "@/components/common/FaqSchema";
 import krPages from "@/config/longtail/kr-pages.json";
+
+const mainFaq = [
+  {
+    question: "프리랜서 종합소득세 신고는 언제 하나요?",
+    answer: "매년 5월 1일부터 5월 31일까지 전년도 소득에 대한 종합소득세를 신고·납부합니다. 성실신고확인 대상자(수입 7,500만 원 초과)는 6월 30일까지 연장됩니다.",
+  },
+  {
+    question: "3.3% 원천징수란 무엇인가요?",
+    answer: "프리랜서에게 대가를 지급할 때 소득세 3%와 지방소득세 0.3%를 합한 3.3%를 미리 떼고 지급하는 제도입니다. 이는 중간 예납 성격이며, 종합소득세 신고 시 기납부세액으로 공제됩니다.",
+  },
+  {
+    question: "종합소득세 신고를 안 하면 어떻게 되나요?",
+    answer: "무신고 시 납부할 세액의 20%(부정 무신고 시 40%)의 가산세가 부과됩니다. 또한 3.3% 원천징수로 이미 납부한 세금에 대한 환급도 받을 수 없습니다. 기한 후 신고도 가능하지만, 가산세가 줄어들 뿐 면제되지는 않습니다.",
+  },
+  {
+    question: "프리랜서도 연말정산을 하나요?",
+    answer: "아니요. 연말정산은 근로소득자(직장인)만 해당됩니다. 프리랜서는 사업소득자로 매년 5월에 종합소득세 신고를 직접 해야 합니다. 직장과 프리랜서를 병행하는 경우, 연말정산 후 5월에 사업소득을 합산하여 종합소득세를 신고합니다.",
+  },
+  {
+    question: "세금 환급은 언제 받나요?",
+    answer: "5월에 종합소득세 신고를 완료하면 보통 6월 말~7월 중에 신고한 계좌로 환급금이 입금됩니다. 기한 후 신고의 경우 신고일로부터 약 2개월 내에 환급됩니다.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "프리랜서 종합소득세 계산기 2026 — CalcHub",
@@ -57,6 +82,9 @@ export default function KrFreelancerTaxCalculatorPage() {
           ))}
         </ul>
       </section>
+
+      <FaqSection title="자주 묻는 질문" items={mainFaq} />
+      <FaqSchema items={mainFaq} />
 
       <AuthorityBlock
         taxYear={2026}
