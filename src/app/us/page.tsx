@@ -55,8 +55,36 @@ export default function UsHomePage() {
         </div>
       </section>
 
-      {/* Longtail Link Grid */}
+      {/* Tax Calculators */}
       <section className="mt-16">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+          Tax Calculators
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            { href: "/us/1099-tax-calculator", title: "1099 Tax Calculator", desc: "Federal, SE, and state taxes for freelancers and contractors" },
+            { href: "/us/w2-vs-1099-calculator", title: "W-2 vs 1099 Calculator", desc: "Compare take-home pay as employee vs independent contractor" },
+            { href: "/us/home-office-deduction-calculator", title: "Home Office Deduction", desc: "Simplified vs Regular method — find which saves more" },
+            { href: "/us/mileage-deduction-calculator", title: "Mileage Deduction", desc: "Standard Mileage Rate vs Actual Expenses comparison" },
+          ].map((calc) => (
+            <Link
+              key={calc.href}
+              href={calc.href}
+              className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
+            >
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                {calc.title}
+              </h3>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                {calc.desc}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Longtail Link Grid */}
+      <section className="mt-12">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white">
           Tax Calculators by Profession & State
         </h2>
