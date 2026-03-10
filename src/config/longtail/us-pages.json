@@ -14,7 +14,25 @@
         "Parking and toll fees while driving",
         "Water, snacks, and supplies for passengers"
       ]
-    }
+    },
+    "faq": [
+      {
+        "question": "Do Uber drivers have to pay self-employment tax?",
+        "answer": "Yes. As an independent contractor, Uber drivers pay self-employment (SE) tax of 15.3% on net earnings — 12.4% for Social Security and 2.9% for Medicare. This is in addition to federal and state income taxes."
+      },
+      {
+        "question": "Should I use the standard mileage rate or actual expenses?",
+        "answer": "For most Uber drivers, the standard mileage rate (67 cents/mile in 2026) is simpler and often results in a larger deduction. Track every mile you drive for business — including miles driving to pick up passengers. If you have a newer or expensive vehicle, compare both methods to see which saves more."
+      },
+      {
+        "question": "What happens if I don't pay quarterly estimated taxes?",
+        "answer": "If you owe more than $1,000 in taxes for the year and haven't paid quarterly estimates, the IRS may charge an underpayment penalty. Quarterly payments are due in April, June, September, and January. Use this calculator to estimate your quarterly amount."
+      },
+      {
+        "question": "Do I need to report income under $600 from Uber?",
+        "answer": "Yes. Even if Uber doesn't send you a 1099 (they're required to for $600+), you must report all income on your tax return. Keep your own records of every trip and payment received."
+      }
+    ]
   },
   {
     "slug": "doordash-dasher-tax",
@@ -31,7 +49,21 @@
         "Car maintenance, gas, and insurance",
         "Parking fees during deliveries"
       ]
-    }
+    },
+    "faq": [
+      {
+        "question": "How much should DoorDash drivers set aside for taxes?",
+        "answer": "A good rule of thumb is to set aside 25-30% of your net earnings (after expenses) for taxes. This covers federal income tax, self-employment tax, and state tax. The exact amount depends on your total income and tax bracket."
+      },
+      {
+        "question": "Can I deduct miles driving to the first delivery and home after the last?",
+        "answer": "Miles driven from your home to your first delivery and from your last delivery back home are generally considered commuting miles and are not deductible. However, all miles between deliveries are deductible. If you use a dedicated home office, the rules may differ."
+      },
+      {
+        "question": "Are DoorDash tips taxable?",
+        "answer": "Yes, tips received through DoorDash are taxable income and must be reported on your tax return. DoorDash includes tips in your 1099 form. Cash tips are also taxable, though DoorDash won't report them — you're still legally required to report them."
+      }
+    ]
   },
   {
     "slug": "freelance-developer-tax",
@@ -48,7 +80,25 @@
         "Internet and phone bills (business portion)",
         "Professional development, courses, and conferences"
       ]
-    }
+    },
+    "faq": [
+      {
+        "question": "What's the difference between W-2 and 1099 taxes for developers?",
+        "answer": "As a W-2 employee, your employer pays half of Social Security and Medicare taxes. As a 1099 contractor, you pay the full 15.3% self-employment tax yourself. However, 1099 developers can deduct business expenses (home office, equipment, software) that W-2 employees cannot."
+      },
+      {
+        "question": "Can freelance developers deduct a home office?",
+        "answer": "Yes, if you use a dedicated space in your home exclusively and regularly for business. You can use the simplified method ($5/sq ft, up to 300 sq ft = $1,500 max) or the regular method (calculate actual expenses based on the percentage of home used). The space must be your principal place of business."
+      },
+      {
+        "question": "Should freelance developers set up an S-Corp?",
+        "answer": "If you earn over $80,000-$100,000 as a freelance developer, an S-Corp election may save on self-employment tax. You'd pay yourself a reasonable salary (subject to payroll tax) and take remaining profits as distributions (no SE tax). Consult a tax professional to see if the savings outweigh the additional costs."
+      },
+      {
+        "question": "Are SaaS and cloud service subscriptions tax-deductible?",
+        "answer": "Yes. AWS, Google Cloud, GitHub, JetBrains, and other software subscriptions used for business are fully deductible. If a subscription is used for both personal and business purposes, you can deduct the business-use percentage."
+      }
+    ]
   },
   {
     "slug": "california-1099-tax",
@@ -56,7 +106,21 @@
     "h1": "California 1099 Self-Employed Tax Calculator",
     "description": "Calculate your California state tax plus federal and SE tax as a 1099 contractor. CA has the highest state tax rates in the US.",
     "keywords": ["california 1099 tax", "CA self employed tax", "california freelance tax"],
-    "defaultState": "CA"
+    "defaultState": "CA",
+    "faq": [
+      {
+        "question": "What is the California state income tax rate for self-employed?",
+        "answer": "California has progressive tax rates from 1% to 13.3%, the highest in the US. Self-employed individuals pay the same state rates as employees, but must also pay federal self-employment tax of 15.3%. Combined with federal tax, California freelancers can face effective tax rates of 40%+."
+      },
+      {
+        "question": "Does California have a self-employment tax?",
+        "answer": "California itself doesn't have a separate self-employment tax — that's a federal tax (15.3%). However, California does tax all self-employment income at its regular income tax rates, which can be up to 13.3% for high earners."
+      },
+      {
+        "question": "Can I reduce my California taxes by moving to another state?",
+        "answer": "Yes, states like Texas, Florida, and Washington have no income tax. Moving could save 5-13% in state taxes depending on your income. However, California has strict rules about establishing residency elsewhere — you must genuinely relocate, not just claim a new address."
+      }
+    ]
   },
   {
     "slug": "new-york-1099-tax",
@@ -64,7 +128,21 @@
     "h1": "New York 1099 Self-Employed Tax Calculator",
     "description": "Calculate your New York state tax plus federal and SE tax as a 1099 contractor. NY has progressive state tax rates up to 10.9%.",
     "keywords": ["new york 1099 tax", "NY self employed tax", "new york freelance tax"],
-    "defaultState": "NY"
+    "defaultState": "NY",
+    "faq": [
+      {
+        "question": "What is the New York state tax rate for freelancers?",
+        "answer": "New York has progressive state tax rates from 4% to 10.9%. If you live in New York City, you'll also pay NYC income tax of 3.078% to 3.876%, making it one of the highest-taxed locations for freelancers in the US."
+      },
+      {
+        "question": "Do I pay NYC tax if I live outside the city but work there?",
+        "answer": "If you're self-employed and not a NYC resident, you generally don't owe NYC income tax even if some clients are based there. NYC tax applies to residents and those with a NYC office. However, NY state tax applies to all NY-sourced income."
+      },
+      {
+        "question": "How can New York freelancers reduce their tax burden?",
+        "answer": "Max out retirement contributions (SEP IRA up to $69,000), claim the home office deduction, track all business expenses, and make timely quarterly payments to avoid penalties. If earning over $100K, consider an S-Corp election to reduce SE tax."
+      }
+    ]
   },
   {
     "slug": "texas-1099-tax",
@@ -72,7 +150,21 @@
     "h1": "Texas 1099 Self-Employed Tax Calculator",
     "description": "Calculate your taxes as a 1099 contractor in Texas. TX has no state income tax — see how much you save.",
     "keywords": ["texas 1099 tax", "TX self employed tax", "texas no income tax"],
-    "defaultState": "TX"
+    "defaultState": "TX",
+    "faq": [
+      {
+        "question": "Does Texas have a state income tax?",
+        "answer": "No. Texas has no state income tax, which means freelancers and self-employed workers only pay federal income tax and self-employment tax. This can save 5-13% compared to high-tax states like California or New York."
+      },
+      {
+        "question": "What taxes do Texas freelancers actually pay?",
+        "answer": "Texas freelancers pay federal income tax (10-37% depending on bracket) and self-employment tax (15.3% on net earnings). There's no state income tax. However, Texas does have higher property taxes and sales tax to fund state services."
+      },
+      {
+        "question": "Is it worth moving to Texas to save on taxes as a freelancer?",
+        "answer": "If you're earning $100K+ as a freelancer, moving from California or New York to Texas could save $5,000-$15,000+ per year in state income taxes alone. However, consider cost of living, property taxes, and quality-of-life factors in your decision."
+      }
+    ]
   },
   {
     "slug": "florida-1099-tax",
@@ -80,7 +172,21 @@
     "h1": "Florida 1099 Self-Employed Tax Calculator",
     "description": "Calculate your taxes as a 1099 contractor in Florida. FL has no state income tax — keep more of your freelance earnings.",
     "keywords": ["florida 1099 tax", "FL self employed tax", "florida freelance tax", "florida no income tax"],
-    "defaultState": "FL"
+    "defaultState": "FL",
+    "faq": [
+      {
+        "question": "Does Florida have a state income tax for freelancers?",
+        "answer": "No. Florida has no state income tax for individuals, making it one of the most tax-friendly states for freelancers. You'll only pay federal income tax and self-employment tax on your 1099 earnings."
+      },
+      {
+        "question": "What is the total tax rate for self-employed in Florida?",
+        "answer": "Florida freelancers pay federal income tax (10-37%) plus self-employment tax (15.3%). With no state income tax, effective rates typically range from 20-35% depending on income. A $100K freelancer in Florida saves roughly $5,000-$10,000 compared to California."
+      },
+      {
+        "question": "Do I need to file a state tax return in Florida?",
+        "answer": "No. Since Florida has no individual income tax, there's no state income tax return to file. You only need to file your federal return (Form 1040) with Schedule C and Schedule SE for self-employment income."
+      }
+    ]
   },
   {
     "slug": "washington-1099-tax",
@@ -88,7 +194,21 @@
     "h1": "Washington 1099 Self-Employed Tax Calculator",
     "description": "Calculate your taxes as a 1099 contractor in Washington state. WA has no state income tax — see your total tax burden.",
     "keywords": ["washington 1099 tax", "WA self employed tax", "washington freelance tax", "washington no income tax"],
-    "defaultState": "WA"
+    "defaultState": "WA",
+    "faq": [
+      {
+        "question": "Does Washington state have income tax?",
+        "answer": "Washington has no state income tax on earned income, making it attractive for freelancers and tech workers. However, Washington does have a capital gains tax of 7% on gains over $250,000 from the sale of stocks and bonds."
+      },
+      {
+        "question": "What taxes do Washington freelancers need to pay?",
+        "answer": "Washington freelancers pay federal income tax (10-37%) and self-employment tax (15.3%). There's no state income tax. However, Washington has a Business & Occupation (B&O) tax that may apply to some freelance businesses, typically at a rate of 1.5% of gross receipts."
+      },
+      {
+        "question": "Is Washington's B&O tax applicable to freelancers?",
+        "answer": "Potentially yes. Washington's B&O tax applies to businesses with more than $100,000 in gross income. The rate varies by activity — service businesses typically pay 1.5% of gross receipts. Many small freelancers fall below the threshold, but check with Washington's Department of Revenue."
+      }
+    ]
   },
   {
     "slug": "etsy-seller-tax",
@@ -105,7 +225,21 @@
         "Home office or studio space deduction",
         "Photography equipment for product listings"
       ]
-    }
+    },
+    "faq": [
+      {
+        "question": "When does Etsy send a 1099 form?",
+        "answer": "Etsy sends a 1099-K if your gross sales exceed $600 in a calendar year. Even if you don't receive a 1099, you must report all income. Remember that the 1099-K shows gross sales — you can deduct fees, shipping, materials, and other expenses."
+      },
+      {
+        "question": "Can I deduct the cost of materials for products I make?",
+        "answer": "Yes. The cost of raw materials, supplies, and inventory used to create your products is fully deductible as Cost of Goods Sold (COGS). Track every purchase and keep receipts. This includes fabric, beads, wood, paint, and any other materials."
+      },
+      {
+        "question": "Are Etsy fees and shipping costs tax-deductible?",
+        "answer": "Yes. Etsy listing fees, transaction fees, payment processing fees, Etsy Ads costs, and shipping costs are all deductible business expenses. These can add up to 15-20% of your sales, so deducting them significantly reduces your taxable income."
+      }
+    ]
   },
   {
     "slug": "content-creator-tax",
@@ -122,21 +256,63 @@
         "Internet and phone bills (business portion)",
         "Props, costumes, and product samples for content"
       ]
-    }
+    },
+    "faq": [
+      {
+        "question": "Are brand sponsorships and free products taxable?",
+        "answer": "Yes. Cash payments from brand deals are taxable income. Free products received in exchange for content are also taxable at their fair market value. If a brand sends you a $500 product to review, that's $500 of taxable income even though you didn't receive cash."
+      },
+      {
+        "question": "Can content creators deduct travel expenses?",
+        "answer": "Yes, if the travel is primarily for business purposes (shooting content, attending brand events, conferences). You can deduct flights, hotels, meals (50%), and local transportation. Keep detailed records showing the business purpose of each trip."
+      },
+      {
+        "question": "How do content creators handle taxes on multiple income streams?",
+        "answer": "Report all income sources on Schedule C: ad revenue (YouTube, TikTok), sponsorships, affiliate commissions, merchandise sales, and Patreon/membership income. All are subject to self-employment tax. Consider making quarterly estimated payments to avoid penalties."
+      }
+    ]
   },
   {
     "slug": "100k-freelancer-tax",
     "title": "$100K Freelancer Tax Calculator 2026",
     "h1": "Tax Calculator for $100,000 Freelance Income",
     "description": "See how much tax you owe on $100,000 freelance income. Get your effective tax rate, quarterly payments, and savings tips.",
-    "keywords": ["100k freelancer tax", "100000 self employed tax", "six figure freelance tax"]
+    "keywords": ["100k freelancer tax", "100000 self employed tax", "six figure freelance tax"],
+    "faq": [
+      {
+        "question": "How much tax does a $100K freelancer pay?",
+        "answer": "A single $100K freelancer with no deductions beyond standard pays roughly $28,000-$33,000 in total taxes (federal + SE + state, depending on state). This includes about $14,100 in self-employment tax and $10,000-$15,000 in federal income tax."
+      },
+      {
+        "question": "What's the effective tax rate on $100K freelance income?",
+        "answer": "Without state tax, the effective federal + SE tax rate on $100K is approximately 28-30%. In high-tax states like California or New York, total effective rates can reach 35-40%. In no-tax states like Texas or Florida, it stays around 28%."
+      },
+      {
+        "question": "How can a $100K freelancer reduce taxes?",
+        "answer": "Top strategies: 1) Max out a SEP IRA ($25,000 contribution = $6,000+ tax savings), 2) Claim home office deduction, 3) Track all business expenses, 4) Consider S-Corp election (can save $3,000-5,000 in SE tax), 5) Make quarterly payments to avoid penalties."
+      }
+    ]
   },
   {
     "slug": "50k-freelancer-tax",
     "title": "$50K Freelancer Tax Calculator 2026",
     "h1": "Tax Calculator for $50,000 Freelance Income",
     "description": "Calculate taxes on $50,000 freelance income. See your tax breakdown, quarterly payments, and potential deductions.",
-    "keywords": ["50k freelancer tax", "50000 self employed tax"]
+    "keywords": ["50k freelancer tax", "50000 self employed tax"],
+    "faq": [
+      {
+        "question": "How much tax does a $50K freelancer pay?",
+        "answer": "A single $50K freelancer with standard deduction pays roughly $11,000-$14,000 in total taxes depending on state. This includes about $7,065 in self-employment tax and $3,000-$4,000 in federal income tax."
+      },
+      {
+        "question": "Is $50K freelance income enough to justify quarterly payments?",
+        "answer": "Yes. If you expect to owe more than $1,000 in taxes (which a $50K freelancer almost certainly will), you should make quarterly estimated payments to avoid the IRS underpayment penalty. Divide your estimated annual tax by 4 and pay each quarter."
+      },
+      {
+        "question": "Should a $50K freelancer set up a retirement account?",
+        "answer": "Absolutely. A SEP IRA lets you contribute up to 25% of net self-employment income (about $11,500 on $50K). This reduces your taxable income dollar-for-dollar and builds retirement savings. It's one of the best tax-saving moves for freelancers at any income level."
+      }
+    ]
   },
   {
     "slug": "photographer-tax",
@@ -153,7 +329,21 @@
         "Home studio or office space deduction",
         "Props, backdrops, and printing costs"
       ]
-    }
+    },
+    "faq": [
+      {
+        "question": "Can photographers deduct camera equipment purchases?",
+        "answer": "Yes. Camera bodies, lenses, lighting, and other equipment can be deducted. Items under $2,500 can be expensed immediately under the de minimis safe harbor rule. Larger purchases can be fully deducted in year one using Section 179 or depreciated over several years."
+      },
+      {
+        "question": "Are second shooter and assistant payments deductible?",
+        "answer": "Yes. Payments to second shooters, photo assistants, and editors are deductible as contract labor. If you pay any individual $600+ in a year, you must issue them a 1099-NEC. Keep records of all payments made."
+      },
+      {
+        "question": "Can photographers deduct travel to photo shoots?",
+        "answer": "Yes. Travel for on-location shoots including transportation, lodging, and meals (50% for meals) is deductible. For destination weddings or travel photography, the trip must be primarily for business. Keep a log of business purpose for each trip."
+      }
+    ]
   },
   {
     "slug": "graphic-designer-tax",
@@ -170,20 +360,62 @@
         "Home office deduction",
         "Client meeting expenses and portfolio hosting"
       ]
-    }
+    },
+    "faq": [
+      {
+        "question": "Can graphic designers deduct Adobe Creative Cloud?",
+        "answer": "Yes. Adobe Creative Cloud, Figma, Sketch, Canva Pro, and all design software subscriptions are 100% deductible as business expenses. If you use them partly for personal projects, deduct only the business-use percentage."
+      },
+      {
+        "question": "Is a drawing tablet or iPad Pro tax-deductible?",
+        "answer": "Yes. Drawing tablets (Wacom, iPad Pro with Apple Pencil), monitors, and other design hardware are deductible. Under Section 179, you can deduct the full cost in the year of purchase rather than depreciating over several years."
+      },
+      {
+        "question": "Should freelance designers charge sales tax on services?",
+        "answer": "It depends on your state. Most states don't charge sales tax on pure design services, but some do tax certain deliverables (printed materials, physical products). Digital deliverables may also be taxable in some states. Check your state's rules or consult a tax professional."
+      }
+    ]
   },
   {
     "slug": "200k-freelancer-tax",
     "title": "$200K Freelancer Tax Calculator 2026",
     "h1": "Tax Calculator for $200,000 Freelance Income",
     "description": "See how much tax you owe on $200,000 freelance income. High-income tax strategies, SEP IRA savings, and quarterly payment schedule.",
-    "keywords": ["200k freelancer tax", "200000 self employed tax", "high income freelance tax"]
+    "keywords": ["200k freelancer tax", "200000 self employed tax", "high income freelance tax"],
+    "faq": [
+      {
+        "question": "How much tax does a $200K freelancer pay?",
+        "answer": "A single $200K freelancer in a no-tax state pays roughly $60,000-$65,000 in total taxes (federal + SE). In California, this rises to $75,000-$80,000. The effective rate is approximately 30-40% depending on deductions and state."
+      },
+      {
+        "question": "Is an S-Corp worth it at $200K freelance income?",
+        "answer": "Very likely yes. At $200K, S-Corp election can save $8,000-$15,000+ per year in self-employment tax. You'd pay yourself a reasonable salary (e.g., $100K) and take the remaining $100K as distributions not subject to SE tax. The savings far outweigh the $1,000-$3,000 annual cost of S-Corp compliance."
+      },
+      {
+        "question": "What retirement accounts should a $200K freelancer use?",
+        "answer": "A Solo 401(k) allows up to $69,000 in total contributions (2026), combining employee deferrals ($23,500) and employer profit-sharing (25% of net income). This is more flexible than a SEP IRA and can include Roth contributions. At $200K, maxing this out could save $15,000-$20,000 in taxes."
+      }
+    ]
   },
   {
     "slug": "consultant-tax",
     "title": "Independent Consultant Tax Calculator 2026",
     "h1": "Independent Consultant Tax Calculator",
     "description": "Calculate your taxes as an independent consultant. Get federal, SE, and state tax estimates for your consulting income.",
-    "keywords": ["consultant tax calculator", "independent consultant tax", "consulting 1099 tax"]
+    "keywords": ["consultant tax calculator", "independent consultant tax", "consulting 1099 tax"],
+    "faq": [
+      {
+        "question": "What expenses can independent consultants deduct?",
+        "answer": "Common deductions include: home office, business travel, professional liability insurance, marketing and advertising, professional memberships, continuing education, client entertainment (50% for meals), computer and software, and phone/internet (business portion)."
+      },
+      {
+        "question": "Should consultants form an LLC?",
+        "answer": "An LLC provides liability protection and is recommended for most consultants. A single-member LLC is taxed the same as a sole proprietor (no tax difference), but it protects your personal assets. You can also elect S-Corp taxation through an LLC if it makes sense financially."
+      },
+      {
+        "question": "How do consultants handle clients in multiple states?",
+        "answer": "You may owe taxes in states where you have 'nexus' (significant presence). If you work remotely from one state for clients in another, you generally pay tax only in your home state. However, if you travel to client sites, you may owe tax in those states too. Rules vary by state."
+      }
+    ]
   }
 ]

@@ -2,7 +2,32 @@ import type { Metadata } from "next";
 import UsCalculator from "@/components/us/UsCalculator";
 import AuthorityBlock from "@/components/authority/AuthorityBlock";
 import RelatedLink from "@/components/common/RelatedLink";
+import FaqSection from "@/components/common/FaqSection";
+import FaqSchema from "@/components/common/FaqSchema";
 import usPages from "@/config/longtail/us-pages.json";
+
+const mainFaq = [
+  {
+    question: "What is self-employment tax?",
+    answer: "Self-employment (SE) tax covers Social Security (12.4%) and Medicare (2.9%) taxes, totaling 15.3% of net earnings. As a W-2 employee, your employer pays half — but as a 1099 contractor, you pay the full amount. The good news: you can deduct half of SE tax from your income.",
+  },
+  {
+    question: "When are quarterly estimated tax payments due?",
+    answer: "For 2026, quarterly payments are due: Q1 (April 15), Q2 (June 15), Q3 (September 15), and Q4 (January 15, 2027). If you expect to owe $1,000+ in taxes, you should make quarterly payments to avoid underpayment penalties.",
+  },
+  {
+    question: "What's the difference between 1099-NEC and 1099-K?",
+    answer: "1099-NEC reports non-employee compensation (freelance/contract payments of $600+). 1099-K reports payment card and third-party network transactions (PayPal, Venmo, etc.) over $600. Both report taxable income, but they come from different sources.",
+  },
+  {
+    question: "How can I reduce my self-employment tax?",
+    answer: "Top strategies: 1) Deduct all legitimate business expenses to reduce net income, 2) Contribute to a SEP IRA or Solo 401(k), 3) Consider S-Corp election if earning $80K+ to split income between salary and distributions, 4) Claim the home office deduction if eligible.",
+  },
+  {
+    question: "Do I need to file taxes if I made less than $400?",
+    answer: "If your net self-employment income is under $400, you don't owe self-employment tax. However, you may still need to file a federal return if your total income exceeds the standard deduction threshold ($15,000 for single filers in 2026).",
+  },
+];
 
 export const metadata: Metadata = {
   title: "1099 Self-Employed Tax Calculator 2026 — CalcHub",
@@ -58,6 +83,9 @@ export default function Us1099TaxCalculatorPage() {
           ))}
         </ul>
       </section>
+
+      <FaqSection title="Frequently Asked Questions" items={mainFaq} />
+      <FaqSchema items={mainFaq} />
 
       <AuthorityBlock
         taxYear={2026}
