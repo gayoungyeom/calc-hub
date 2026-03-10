@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import LocaleUpdater from "@/components/layout/LocaleUpdater";
@@ -16,7 +16,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://calchubs.org"),
   title: "CalcHub — Tax Calculator for Freelancers | 프리랜서 세금 계산기",
   description:
     "프리랜서와 N잡러를 위한 세금 계산기. 종합소득세 환급액, 1099 Quarterly Tax를 5초 만에 계산하세요. Free tax calculator for freelancers and self-employed.",
@@ -31,6 +37,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="google-adsense-account" content="ca-pub-4343769094636612" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
