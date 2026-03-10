@@ -226,7 +226,7 @@
 ### 3-4. 기술적 SEO 강화
 
 - [x] 사이트맵 자동 업데이트 확인 (45개 URL, priority 최적화)
-- [x] robots.txt 최적화 (/api/, /_next/ 차단)
+- [x] robots.txt 최적화 (/api/, /\_next/ 차단)
 - [x] Core Web Vitals 최적화 (viewport export, metadataBase, GA preconnect)
 - [ ] Search Console 인덱싱 현황 모니터링 _(외부 작업)_
 - [ ] 크롤링 오류 수정 (있을 경우) _(외부 작업)_
@@ -318,15 +318,60 @@
 > **목표:** 집중 시장에서 계산기 포트폴리오 확장 + 월 5만 방문자
 > **완료 조건:** 계산기 10개+, 롱테일 500개+, 월 방문자 5만, 월 수익 100만 원+
 
-### 5-1. 계산기 포트폴리오 확장
+### 5-1. KR 신규 계산기 (3개)
 
-- [ ] 집중 시장 기준 신규 계산기 5개+ 개발
-  - (US 집중 시) Roth vs Traditional IRA, W-2 vs 1099 비교, Home Office Deduction, Vehicle Mileage Deduction, Student Loan Interest
-  - (KR 집중 시) 유튜버 세금, 주식 양도세, 부동산 양도세, 근로소득세, 퇴직금 계산기
-- [ ] 비교 계산기 추가 (세금 전략 A vs B)
-- [ ] 계산기별 Config JSON + 계산 함수 + 테스트 + UI
+**계산기 1: 근로소득세 계산기**
 
-### 5-2. Programmatic SEO 대규모 확장
+- [ ] Config JSON 작성 (`src/config/kr/earned-income-2026.json`) — 근로소득 세율표, 근로소득공제, 표준세액공제
+- [ ] 계산 엔진 구현 (`src/engine/kr/earned-income-tax.ts`) — 총급여 → 근로소득공제 → 과세표준 → 누진세율 → 산출세액 → 세액공제
+- [ ] 단위 테스트 작성 (`__tests__/kr-earned-income-tax.test.ts`) — 5개 소득 구간별 테스트
+- [ ] UI 구현 — 입력폼 (연봉, 부양가족, 비과세소득), 결과 표시, 인사이트 패널
+- [ ] 페이지 생성 (`/kr/earned-income-tax-calculator`) + SEO 메타데이터
+- [ ] 롱테일 페이지 5개 — 연봉 3000/5000/7000만원/1억, 신입사원
+
+**계산기 2: 부가가치세 계산기**
+
+- [ ] 계산 엔진 구현 (`src/engine/kr/vat.ts`) — 매출세액 - 매입세액 = 납부세액, 간이과세자 로직
+- [ ] 단위 테스트 작성 (`__tests__/kr-vat.test.ts`)
+- [ ] UI 구현 — 입력폼 (매출액, 매입액, 과세 유형), 결과 표시
+- [ ] 페이지 생성 (`/kr/vat-calculator`) + SEO 메타데이터
+- [ ] 롱테일 페이지 3개 — 간이과세자, 일반과세자, 면세사업자
+
+**계산기 3: 퇴직금 계산기**
+
+- [ ] 계산 엔진 구현 (`src/engine/kr/severance.ts`) — 1일 평균임금 × 30일 × (재직일수/365)
+- [ ] 단위 테스트 작성 (`__tests__/kr-severance.test.ts`)
+- [ ] UI 구현 — 입력폼 (입사일, 퇴사일, 월급, 상여금, 연차수당), 결과 표시
+- [ ] 페이지 생성 (`/kr/severance-calculator`) + SEO 메타데이터
+- [ ] 롱테일 페이지 3개 — 1년/3년/10년 근속
+
+### 5-2. US 신규 계산기 (3개)
+
+**계산기 1: W-2 vs 1099 비교 계산기**
+
+- [ ] 계산 엔진 구현 (`src/engine/us/w2-vs-1099.ts`) — 동일 소득에 대해 W-2 세금 vs 1099 세금 비교
+- [ ] 단위 테스트 작성 (`__tests__/us-w2-vs-1099.test.ts`)
+- [ ] UI 구현 — 입력폼 (연소득, Filing Status, State), 나란히 비교 결과 표시
+- [ ] 페이지 생성 (`/us/w2-vs-1099-calculator`) + SEO 메타데이터
+- [ ] 롱테일 페이지 3개 — $50K/$100K/$150K 비교
+
+**계산기 2: Home Office Deduction 계산기**
+
+- [ ] 계산 엔진 구현 (`src/engine/us/home-office.ts`) — Simplified Method ($5/sqft, max 300) vs Regular Method (실제 비용 비례)
+- [ ] 단위 테스트 작성 (`__tests__/us-home-office.test.ts`)
+- [ ] UI 구현 — 입력폼 (집 면적, 오피스 면적, 임대료/모기지, 유틸리티), 두 방법 비교 결과
+- [ ] 페이지 생성 (`/us/home-office-deduction-calculator`) + SEO 메타데이터
+- [ ] 롱테일 페이지 3개 — Apartment, House, Coworking 비교
+
+**계산기 3: Mileage Deduction 계산기**
+
+- [ ] 계산 엔진 구현 (`src/engine/us/mileage.ts`) — Standard Mileage Rate vs Actual Expenses 비교
+- [ ] 단위 테스트 작성 (`__tests__/us-mileage.test.ts`)
+- [ ] UI 구현 — 입력폼 (연간 마일수, 차량 비용), 두 방법 비교 결과
+- [ ] 페이지 생성 (`/us/mileage-deduction-calculator`) + SEO 메타데이터
+- [ ] 롱테일 페이지 3개 — Uber/DoorDash Driver, Freelancer, Real Estate Agent
+
+### 5-3. Programmatic SEO 대규모 확장
 
 - [ ] 롱테일 자동 생성 시스템 고도화
   - 직군 × 지역 × 연도 × 소득구간 조합 자동화
@@ -334,7 +379,7 @@
 - [ ] (US) 주별 15개 확장
 - [ ] 페이지별 고유 인사이트 자동 생성
 
-### 5-3. 수익 최적화
+### 5-4. 수익 최적화
 
 - [ ] 광고 배치 지속 최적화 (데이터 기반)
 - [ ] RPM 높은 페이지 패턴 분석 → 복제
