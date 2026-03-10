@@ -4,11 +4,18 @@ import Link from "next/link";
 import KrCalculator from "@/components/kr/KrCalculator";
 import AuthorityBlock from "@/components/authority/AuthorityBlock";
 import RelatedLink from "@/components/common/RelatedLink";
+import FaqSection from "@/components/common/FaqSection";
+import FaqSchema from "@/components/common/FaqSchema";
 import krPages from "@/config/longtail/kr-pages.json";
 
 interface DeductionGuide {
   title: string;
   items: string[];
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
 }
 
 interface PageData {
@@ -18,6 +25,7 @@ interface PageData {
   description: string;
   keywords: string[];
   deductionGuide?: DeductionGuide;
+  faq?: FaqItem[];
 }
 
 export function generateStaticParams() {
@@ -93,6 +101,14 @@ export default async function KrLongtailPage({
             경비 처리 시 증빙 서류(영수증, 세금계산서)를 반드시 보관하세요. 정확한 경비 인정 범위는 세무사와 상담하시기 바랍니다.
           </p>
         </section>
+      )}
+
+      {/* FAQ */}
+      {page.faq && page.faq.length > 0 && (
+        <>
+          <FaqSection title="자주 묻는 질문" items={page.faq} />
+          <FaqSchema items={page.faq} />
+        </>
       )}
 
       {/* 관련 계산기 내부 링크 */}

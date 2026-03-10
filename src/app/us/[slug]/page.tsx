@@ -4,11 +4,18 @@ import Link from "next/link";
 import UsCalculator from "@/components/us/UsCalculator";
 import AuthorityBlock from "@/components/authority/AuthorityBlock";
 import RelatedLink from "@/components/common/RelatedLink";
+import FaqSection from "@/components/common/FaqSection";
+import FaqSchema from "@/components/common/FaqSchema";
 import usPages from "@/config/longtail/us-pages.json";
 
 interface DeductionGuide {
   title: string;
   items: string[];
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
 }
 
 interface PageData {
@@ -19,6 +26,7 @@ interface PageData {
   keywords: string[];
   defaultState?: string;
   deductionGuide?: DeductionGuide;
+  faq?: FaqItem[];
 }
 
 export function generateStaticParams() {
@@ -94,6 +102,14 @@ export default async function UsLongtailPage({
             Keep records and receipts for all deductions. Consult a tax professional for your specific situation.
           </p>
         </section>
+      )}
+
+      {/* FAQ */}
+      {page.faq && page.faq.length > 0 && (
+        <>
+          <FaqSection title="Frequently Asked Questions" items={page.faq} />
+          <FaqSchema items={page.faq} />
+        </>
       )}
 
       {/* Related calculators */}
