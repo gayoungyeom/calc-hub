@@ -225,19 +225,19 @@
 
 ### 3-4. 기술적 SEO 강화
 
-- [ ] 사이트맵 자동 업데이트 확인 (새 페이지 반영)
-- [ ] robots.txt 최적화
-- [ ] Core Web Vitals 확인 (LCP < 2.5s, FID < 100ms, CLS < 0.1)
-- [ ] Search Console 인덱싱 현황 모니터링
-- [ ] 크롤링 오류 수정 (있을 경우)
+- [x] 사이트맵 자동 업데이트 확인 (45개 URL, priority 최적화)
+- [x] robots.txt 최적화 (/api/, /_next/ 차단)
+- [x] Core Web Vitals 최적화 (viewport export, metadataBase, GA preconnect)
+- [ ] Search Console 인덱싱 현황 모니터링 _(외부 작업)_
+- [ ] 크롤링 오류 수정 (있을 경우) _(외부 작업)_
 
 ### Phase 3 체크포인트
 
-- [ ] 인사이트 항목 KR 5개+ / US 5개+ 동작
-- [ ] 롱테일 페이지 30개+ 배포
-- [ ] AdSense 광고 4개 위치 라이브
-- [ ] A/B 테스트 2개 가동 중
-- [ ] 5개 US State 계산 가능 (CA, NY, TX, FL, WA)
+- [x] 인사이트 항목 KR 7개 / US 7개 동작
+- [x] 롱테일 페이지 34개 배포 (KR 18 + US 16)
+- [ ] AdSense 광고 4개 위치 라이브 _(승인 대기 중)_
+- [ ] A/B 테스트 2개 가동 중 _(승인 대기 중)_
+- [x] 5개 US State 계산 가능 (CA, NY, TX, FL, WA)
 
 ---
 
