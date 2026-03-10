@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "50k-comparison",
+    "title": "W-2 vs 1099 at $50K — Tax Comparison 2026",
+    "h1": "W-2 vs 1099 at $50,000 Income",
+    "description": "Compare taxes on $50,000 as a W-2 employee vs 1099 contractor. See the take-home pay difference and self-employment tax impact.",
+    "keywords": ["50k W-2 vs 1099", "$50000 employee vs contractor", "50K tax comparison"],
+    "faq": [
+      {
+        "question": "How much more tax does a 1099 contractor pay at $50K?",
+        "answer": "At $50K income with no deductions, a 1099 contractor pays roughly $3,500-$4,000 more in taxes than a W-2 employee, primarily due to the self-employment tax (15.3% vs 7.65% FICA). With business deductions, this gap narrows significantly."
+      },
+      {
+        "question": "What rate should I charge as a 1099 to match $50K W-2?",
+        "answer": "To match a $50K W-2 salary's take-home pay and benefits, you should charge approximately $65K-$70K as a 1099 contractor. This accounts for the extra SE tax, self-funded health insurance, and lack of employer benefits."
+      },
+      {
+        "question": "Is $50K enough to justify being 1099?",
+        "answer": "At $50K, the tax disadvantage of 1099 status is moderate. The main benefits of 1099 are flexibility and business deductions. If you have significant deductions (home office, equipment, etc.), 1099 can work well at this income level."
+      }
+    ]
+  },
+  {
+    "slug": "100k-comparison",
+    "title": "W-2 vs 1099 at $100K — Tax Comparison 2026",
+    "h1": "W-2 vs 1099 at $100,000 Income",
+    "description": "Compare taxes on $100,000 as a W-2 employee vs 1099 contractor. Detailed breakdown of federal, state, and self-employment taxes.",
+    "keywords": ["100k W-2 vs 1099", "$100000 employee vs contractor", "100K tax comparison"],
+    "faq": [
+      {
+        "question": "How much is the tax difference at $100K income?",
+        "answer": "At $100K with no deductions, a 1099 contractor pays roughly $7,000-$8,000 more in total taxes than a W-2 employee. The self-employment tax alone adds about $14,130 (15.3% of 92.35% of $100K), though half is deductible."
+      },
+      {
+        "question": "Should I consider S-Corp election at $100K?",
+        "answer": "Yes, $100K is typically above the threshold where S-Corp election becomes beneficial. By paying yourself a reasonable salary (e.g., $70K) and taking the rest as distributions, you can save $3,000-$5,000 in self-employment taxes annually."
+      },
+      {
+        "question": "What deductions can close the gap at $100K?",
+        "answer": "At $100K, consider: home office deduction ($1,500), health insurance premiums ($7,000+), SEP IRA contributions (up to $25K), mileage deduction, equipment and software, and professional development. These can easily add up to $20K-$30K in deductions."
+      }
+    ]
+  },
+  {
+    "slug": "150k-comparison",
+    "title": "W-2 vs 1099 at $150K — Tax Comparison 2026",
+    "h1": "W-2 vs 1099 at $150,000 Income",
+    "description": "Compare taxes on $150,000 as a W-2 employee vs 1099 contractor. High-income tax strategies and S-Corp considerations.",
+    "keywords": ["150k W-2 vs 1099", "$150000 employee vs contractor", "150K tax comparison"],
+    "faq": [
+      {
+        "question": "How significant is the tax difference at $150K?",
+        "answer": "At $150K, the 1099 tax penalty without deductions is substantial — roughly $10,000-$12,000 more per year than W-2. However, at this income level, S-Corp election and aggressive deduction strategies can often reverse the advantage."
+      },
+      {
+        "question": "What's the Social Security wage base impact at $150K?",
+        "answer": "The Social Security portion of SE tax (12.4%) only applies up to the wage base ($168,600 in 2026). At $150K, you're still below this cap, so the full SE tax rate applies. Above the cap, only the Medicare portion (2.9%) continues."
+      },
+      {
+        "question": "What retirement options are available at $150K as 1099?",
+        "answer": "At $150K, you can maximize: Solo 401(k) (up to $69,000 in employer + employee contributions), SEP IRA (up to 25% of net self-employment income), or Defined Benefit Plan (potentially $100K+ contributions for older taxpayers). These significantly reduce taxable income."
+      }
+    ]
+  }
+]

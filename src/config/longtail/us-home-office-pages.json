@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "apartment-home-office",
+    "title": "Apartment Home Office Deduction Calculator 2026",
+    "h1": "Apartment Home Office Deduction",
+    "description": "Calculate your home office deduction for an apartment. Compare Simplified vs Regular Method for renters working from home.",
+    "keywords": ["apartment home office deduction", "renter home office tax", "apartment work from home deduction"],
+    "faq": [
+      {
+        "question": "Can I claim a home office deduction as a renter?",
+        "answer": "Yes! Renters can claim the home office deduction just like homeowners. With the Regular Method, you can deduct a portion of your rent, utilities, renter's insurance, and other home expenses based on the percentage of your apartment used for business."
+      },
+      {
+        "question": "How do I calculate business use percentage in a small apartment?",
+        "answer": "Measure the dedicated workspace area and divide by your total apartment square footage. For example, if your desk area is 80 sq ft in a 600 sq ft apartment, your business use is 13.3%. Even a corner of a room qualifies if it's used regularly and exclusively for business."
+      },
+      {
+        "question": "Is the Simplified Method better for small apartments?",
+        "answer": "Not necessarily. If you live in a high-rent area (NYC, SF, LA), the Regular Method often provides a larger deduction even with a small office space, because the proportional share of your rent alone may exceed the $1,500 simplified limit."
+      }
+    ]
+  },
+  {
+    "slug": "house-home-office",
+    "title": "House Home Office Deduction Calculator 2026",
+    "h1": "House Home Office Deduction",
+    "description": "Calculate your home office deduction for homeowners. Include mortgage interest, property taxes, and depreciation in your calculation.",
+    "keywords": ["homeowner home office deduction", "house home office tax", "mortgage interest home office"],
+    "faq": [
+      {
+        "question": "Can homeowners deduct mortgage principal as a home office expense?",
+        "answer": "No, only mortgage interest is deductible as a home office expense, not the principal portion of your payment. Property taxes can also be included as part of your home office expenses under the Regular Method."
+      },
+      {
+        "question": "What about depreciation for a home office?",
+        "answer": "Homeowners using the Regular Method can claim depreciation on the business-use portion of their home. This is based on the home's cost basis (excluding land) divided by 39 years. Note: when you sell, you may need to recapture this depreciation."
+      },
+      {
+        "question": "Do I need a dedicated room for a home office?",
+        "answer": "No, you don't need a separate room. A clearly defined area within a room qualifies, as long as it's used regularly and exclusively for business. However, having a dedicated room makes it easier to calculate square footage and defend the deduction."
+      }
+    ]
+  },
+  {
+    "slug": "coworking-vs-home-office",
+    "title": "Coworking Space vs Home Office — Tax Comparison 2026",
+    "h1": "Coworking Space vs Home Office Tax Comparison",
+    "description": "Compare the tax deductions for coworking space membership vs home office. Find which option saves you more on taxes.",
+    "keywords": ["coworking vs home office tax", "coworking space deduction", "coworking tax write off"],
+    "faq": [
+      {
+        "question": "Is a coworking space membership tax deductible?",
+        "answer": "Yes, coworking space fees are 100% deductible as a business expense (rent expense on Schedule C). Unlike the home office deduction, there's no square footage calculation — the full membership cost is deductible."
+      },
+      {
+        "question": "Can I deduct both a coworking space and home office?",
+        "answer": "It's possible but tricky. If you use your home office regularly and exclusively for business AND also use a coworking space, you may claim both. However, the IRS may scrutinize if your home is truly your 'principal place of business' when you have another workspace."
+      },
+      {
+        "question": "Which is more tax-efficient: coworking or home office?",
+        "answer": "It depends on your costs. A coworking membership ($200-$500/month) is fully deductible. A home office deduction for the same person might be $1,500-$6,000/year depending on method and home costs. Compare total after-tax costs including commute time and expenses."
+      }
+    ]
+  }
+]

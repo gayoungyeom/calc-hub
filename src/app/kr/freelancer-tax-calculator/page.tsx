@@ -71,7 +71,16 @@ export default function KrFreelancerTaxCalculatorPage() {
           관련 세금 계산기
         </h2>
         <ul className="mt-4 space-y-2">
-          {krPages.slice(0, 6).map((p) => (
+          <li>
+            <RelatedLink href="/kr/earned-income-tax-calculator" label="근로소득세 계산기" from="freelancer-tax-calculator" />
+          </li>
+          <li>
+            <RelatedLink href="/kr/vat-calculator" label="부가가치세 계산기" from="freelancer-tax-calculator" />
+          </li>
+          <li>
+            <RelatedLink href="/kr/severance-calculator" label="퇴직금 계산기" from="freelancer-tax-calculator" />
+          </li>
+          {krPages.slice(0, 4).map((p) => (
             <li key={p.slug}>
               <RelatedLink
                 href={`/kr/${p.slug}`}
