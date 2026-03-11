@@ -104,28 +104,57 @@ export default function KrHomePage() {
         </div>
       </section>
 
-      {/* Longtail Link Grid */}
+      {/* 직군별 세금 계산기 */}
       <section className="mt-12">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-          직군별 · 소득별 세금 계산기
+          직군별 세금 계산기
         </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {krPages.map(
-            (page: { slug: string; h1: string; description: string }) => (
-              <Link
-                key={page.slug}
-                href={`/kr/${page.slug}`}
-                className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
-              >
-                <h3 className="font-semibold text-gray-900 dark:text-white">
-                  {page.h1}
-                </h3>
-                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
-                  {page.description}
-                </p>
-              </Link>
-            )
-          )}
+          {krPages
+            .filter((page: { slug: string }) => !page.slug.startsWith("income-"))
+            .map(
+              (page: { slug: string; h1: string; description: string }) => (
+                <Link
+                  key={page.slug}
+                  href={`/kr/${page.slug}`}
+                  className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
+                >
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    {page.h1}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                    {page.description}
+                  </p>
+                </Link>
+              )
+            )}
+        </div>
+      </section>
+
+      {/* 소득별 세금 계산기 */}
+      <section className="mt-12">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+          소득별 세금 계산기
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {krPages
+            .filter((page: { slug: string }) => page.slug.startsWith("income-"))
+            .map(
+              (page: { slug: string; h1: string; description: string }) => (
+                <Link
+                  key={page.slug}
+                  href={`/kr/${page.slug}`}
+                  className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
+                >
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    {page.h1}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                    {page.description}
+                  </p>
+                </Link>
+              )
+            )}
         </div>
       </section>
     </main>

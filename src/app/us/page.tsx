@@ -83,28 +83,84 @@ export default function UsHomePage() {
         </div>
       </section>
 
-      {/* Longtail Link Grid */}
+      {/* By Profession */}
       <section className="mt-12">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-          Tax Calculators by Profession & State
+          Tax Calculators by Profession
         </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {usPages.map(
-            (page: { slug: string; h1: string; description: string }) => (
-              <Link
-                key={page.slug}
-                href={`/us/${page.slug}`}
-                className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
-              >
-                <h3 className="font-semibold text-gray-900 dark:text-white">
-                  {page.h1}
-                </h3>
-                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
-                  {page.description}
-                </p>
-              </Link>
-            )
-          )}
+          {usPages
+            .filter((page: { slug: string }) => !page.slug.endsWith("-1099-tax") && !page.slug.match(/^\d+k-/))
+            .map(
+              (page: { slug: string; h1: string; description: string }) => (
+                <Link
+                  key={page.slug}
+                  href={`/us/${page.slug}`}
+                  className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
+                >
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    {page.h1}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                    {page.description}
+                  </p>
+                </Link>
+              )
+            )}
+        </div>
+      </section>
+
+      {/* By State */}
+      <section className="mt-12">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+          Tax Calculators by State
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {usPages
+            .filter((page: { slug: string }) => page.slug.endsWith("-1099-tax"))
+            .map(
+              (page: { slug: string; h1: string; description: string }) => (
+                <Link
+                  key={page.slug}
+                  href={`/us/${page.slug}`}
+                  className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
+                >
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    {page.h1}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                    {page.description}
+                  </p>
+                </Link>
+              )
+            )}
+        </div>
+      </section>
+
+      {/* By Income */}
+      <section className="mt-12">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+          Tax Calculators by Income
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {usPages
+            .filter((page: { slug: string }) => page.slug.match(/^\d+k-/))
+            .map(
+              (page: { slug: string; h1: string; description: string }) => (
+                <Link
+                  key={page.slug}
+                  href={`/us/${page.slug}`}
+                  className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
+                >
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    {page.h1}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                    {page.description}
+                  </p>
+                </Link>
+              )
+            )}
         </div>
       </section>
     </main>
