@@ -37,6 +37,35 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="google-adsense-account" content="ca-pub-4343769094636612" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "CalcHub",
+              url: "https://calchubs.org",
+              logo: "https://calchubs.org/icon.png",
+              description:
+                "Free tax calculator platform for freelancers, gig workers, and self-employed individuals. 프리랜서와 N잡러를 위한 무료 세금 계산기 플랫폼.",
+              foundingDate: "2026",
+              sameAs: ["https://github.com/gayoungyeom/calc-hub"],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer support",
+                url: "https://calchubs.org/kr/about",
+                availableLanguage: ["Korean", "English"],
+              },
+              knowsAbout: [
+                "Tax Calculation",
+                "Korean Income Tax",
+                "US Federal Tax",
+                "Self-Employment Tax",
+                "Freelancer Tax",
+              ],
+            }),
+          }}
+        />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <Script
