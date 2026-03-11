@@ -71,6 +71,17 @@ export default function AuthorityBlock({
           </dt>
           <dd>{lastUpdated}</dd>
         </div>
+
+        <div>
+          <dt className="font-medium text-gray-700 dark:text-gray-300">
+            {isKo ? '출처 검증' : 'Sources Verified'}
+          </dt>
+          <dd>
+            {isKo
+              ? `공식 세법 자료 기반 검증 완료 (${lastUpdated})`
+              : `Verified against official tax code sources (${lastUpdated})`}
+          </dd>
+        </div>
       </dl>
 
       <p className="mt-4 text-xs text-gray-400 border-t border-gray-200 pt-4 dark:border-dark-border dark:text-gray-500">
