@@ -7,6 +7,7 @@ import RelatedLink from "@/components/common/RelatedLink";
 import FaqSection from "@/components/common/FaqSection";
 import FaqSchema from "@/components/common/FaqSchema";
 import krPages from "@/config/longtail/kr-pages.json";
+import guidePages from "@/config/longtail/kr-guide-pages.json";
 
 interface DeductionGuide {
   title: string;
@@ -161,6 +162,24 @@ export default async function KrLongtailPage({
               <RelatedLink
                 href={`/kr/${p.slug}`}
                 label={p.h1}
+                from={slug}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* 세금 가이드 */}
+      <section className="mt-8">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+          세금 가이드
+        </h2>
+        <ul className="mt-4 space-y-2">
+          {guidePages.slice(0, 3).map((g) => (
+            <li key={g.slug}>
+              <RelatedLink
+                href={`/kr/guide/${g.slug}`}
+                label={g.h1}
                 from={slug}
               />
             </li>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import krPages from "@/config/longtail/kr-pages.json";
+import guidePages from "@/config/longtail/kr-guide-pages.json";
 
 export const metadata: Metadata = {
   title: "세금 계산기 2026 — 종합소득세·근로소득세·부가세·퇴직금 | CalcHub",
@@ -128,6 +129,31 @@ export default function KrHomePage() {
                 </Link>
               )
             )}
+        </div>
+      </section>
+
+      {/* 세금 가이드 */}
+      <section className="mt-12">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+          세금 가이드
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {guidePages.map(
+            (guide: { slug: string; h1: string; description: string }) => (
+              <Link
+                key={guide.slug}
+                href={`/kr/guide/${guide.slug}`}
+                className="rounded-lg border border-gray-200 p-4 transition-all hover:border-blue-300 hover:shadow-sm dark:border-dark-border dark:hover:border-dark-blue"
+              >
+                <h3 className="font-semibold text-gray-900 dark:text-white">
+                  {guide.h1}
+                </h3>
+                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                  {guide.description}
+                </p>
+              </Link>
+            )
+          )}
         </div>
       </section>
 

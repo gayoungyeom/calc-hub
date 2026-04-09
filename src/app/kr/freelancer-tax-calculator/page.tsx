@@ -5,6 +5,7 @@ import RelatedLink from "@/components/common/RelatedLink";
 import FaqSection from "@/components/common/FaqSection";
 import FaqSchema from "@/components/common/FaqSchema";
 import krPages from "@/config/longtail/kr-pages.json";
+import guidePages from "@/config/longtail/kr-guide-pages.json";
 
 const mainFaq = [
   {
@@ -85,6 +86,24 @@ export default function KrFreelancerTaxCalculatorPage() {
               <RelatedLink
                 href={`/kr/${p.slug}`}
                 label={p.h1}
+                from="freelancer-tax-calculator"
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* 세금 가이드 */}
+      <section className="mt-12">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+          세금 가이드
+        </h2>
+        <ul className="mt-4 space-y-2">
+          {guidePages.map((g) => (
+            <li key={g.slug}>
+              <RelatedLink
+                href={`/kr/guide/${g.slug}`}
+                label={g.h1}
                 from="freelancer-tax-calculator"
               />
             </li>
