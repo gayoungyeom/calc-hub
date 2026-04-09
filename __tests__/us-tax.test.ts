@@ -172,3 +172,41 @@ describe("US 1099 Self-Employed Tax 계산", () => {
     expect(result.totalTax).toBeGreaterThan(0);
   });
 });
+
+describe("US 1099 Tax — IRS 대조 검증 (Single / TX / no expenses)", () => {
+  test("$50,000 → SE Tax $7,065 / Federal $3,544 / Total $10,609", () => {
+    const result = calculateUsTax(
+      makeInput({ grossIncome: 50000, state: "TX" }),
+      config
+    );
+    expect(result.selfEmploymentTax).toBe(7065);
+    expect(result.seTaxDeduction).toBe(3533); // Math.round(7065/2) = 3533 (JS rounds .5 up)
+    expect(result.federalTax).toBe(3544);
+    expect(result.stateTax).toBe(0);
+    expect(result.totalTax).toBe(10609);
+  });
+
+  test("$100,000 → SE Tax $14,130 / Federal $12,199 / Total $26,329", () => {
+    const result = calculateUsTax(
+      makeInput({ grossIncome: 100000, state: "TX" }),
+      config
+    );
+    expect(result.selfEmploymentTax).toBe(14130);
+    expect(result.seTaxDeduction).toBe(7065);
+    expect(result.federalTax).toBe(12199);
+    expect(result.stateTax).toBe(0);
+    expect(result.totalTax).toBe(26329);
+  });
+
+  test("$200,000 → SE Tax $28,259 / Federal $34,051 / Total $62,310", () => {
+    const result = calculateUsTax(
+      makeInput({ grossIncome: 200000, state: "TX" }),
+      config
+    );
+    expect(result.selfEmploymentTax).toBe(28259);
+    expect(result.seTaxDeduction).toBe(14130);
+    expect(result.federalTax).toBe(34051);
+    expect(result.stateTax).toBe(0);
+    expect(result.totalTax).toBe(62310);
+  });
+});
