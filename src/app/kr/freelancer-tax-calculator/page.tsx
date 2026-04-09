@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import KrCalculator from "@/components/kr/KrCalculator";
 import AuthorityBlock from "@/components/authority/AuthorityBlock";
 import RelatedLink from "@/components/common/RelatedLink";
@@ -62,6 +63,22 @@ export default function KrFreelancerTaxCalculatorPage() {
           예상 환급액과 절세 팁을 확인하세요.
         </p>
         <p className="mt-1 text-sm text-gray-400 dark:text-gray-500">2026년 세법 기준</p>
+      </div>
+
+      {/* 5월 종소세 시즌 배너 */}
+      <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/20">
+        <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">
+          📋 2026년 종합소득세 신고 기간: 5월 1일 ~ 5월 31일
+        </p>
+        <p className="mt-1 text-xs text-amber-700 dark:text-amber-400">
+          3.3% 원천징수 환급을 받으려면 반드시 기간 내 신고하세요.{" "}
+          <Link
+            href="/kr/guide/income-tax-filing-period-procedure-guide"
+            className="font-medium underline hover:text-amber-900 dark:hover:text-amber-200"
+          >
+            신고 절차 가이드 보기 →
+          </Link>
+        </p>
       </div>
 
       <KrCalculator />
