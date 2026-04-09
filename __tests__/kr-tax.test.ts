@@ -108,3 +108,65 @@ describe("KR 종합소득세 계산", () => {
     }
   });
 });
+
+describe("KR 종합소득세 — 홈택스 대조 검증 (경비 0, 부양 1인)", () => {
+  test("연 2,000만 원 → 종합소득세 1,515,000원", () => {
+    const result = calculateKrIncomeTax(
+      makeInput({ grossIncome: 20000000 }),
+      config
+    );
+    expect(result.taxableIncome).toBe(18500000);
+    expect(result.incomeTax).toBe(1515000);
+    expect(result.localTax).toBe(151500);
+    expect(result.prepaidTax).toBe(660000);
+    expect(result.refundOrDue).toBe(-1006500);
+  });
+
+  test("연 3,000만 원 → 종합소득세 3,015,000원", () => {
+    const result = calculateKrIncomeTax(
+      makeInput({ grossIncome: 30000000 }),
+      config
+    );
+    expect(result.taxableIncome).toBe(28500000);
+    expect(result.incomeTax).toBe(3015000);
+    expect(result.localTax).toBe(301500);
+    expect(result.prepaidTax).toBe(990000);
+    expect(result.refundOrDue).toBe(-2326500);
+  });
+
+  test("연 5,000만 원 → 종합소득세 6,015,000원", () => {
+    const result = calculateKrIncomeTax(
+      makeInput({ grossIncome: 50000000 }),
+      config
+    );
+    expect(result.taxableIncome).toBe(48500000);
+    expect(result.incomeTax).toBe(6015000);
+    expect(result.localTax).toBe(601500);
+    expect(result.prepaidTax).toBe(1650000);
+    expect(result.refundOrDue).toBe(-4966500);
+  });
+
+  test("연 8,000만 원 → 종합소득세 13,080,000원", () => {
+    const result = calculateKrIncomeTax(
+      makeInput({ grossIncome: 80000000 }),
+      config
+    );
+    expect(result.taxableIncome).toBe(78500000);
+    expect(result.incomeTax).toBe(13080000);
+    expect(result.localTax).toBe(1308000);
+    expect(result.prepaidTax).toBe(2640000);
+    expect(result.refundOrDue).toBe(-11748000);
+  });
+
+  test("연 1억 원 → 종합소득세 19,035,000원", () => {
+    const result = calculateKrIncomeTax(
+      makeInput({ grossIncome: 100000000 }),
+      config
+    );
+    expect(result.taxableIncome).toBe(98500000);
+    expect(result.incomeTax).toBe(19035000);
+    expect(result.localTax).toBe(1903500);
+    expect(result.prepaidTax).toBe(3300000);
+    expect(result.refundOrDue).toBe(-17638500);
+  });
+});

@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import krPages from "@/config/longtail/kr-pages.json";
 
 export const metadata: Metadata = {
-  title: "세금 계산기 — CalcHub",
+  title: "세금 계산기 2026 — 종합소득세·근로소득세·부가세·퇴직금 | CalcHub",
   description:
-    "프리랜서, 직장인, 사업자를 위한 세금 계산기. 종합소득세, 근로소득세, 부가가치세, 퇴직금을 5초 만에 계산하세요. 2026년 세법 기준.",
+    "프리랜서·직장인·사업자를 위한 무료 세금 계산기 8종. 종합소득세, 근로소득세, 부가가치세, 퇴직금을 5초 만에 계산하세요. 2026년 최신 세법 기준, 환급액·절세 팁까지.",
   alternates: {
     languages: {
       ko: "/kr",
