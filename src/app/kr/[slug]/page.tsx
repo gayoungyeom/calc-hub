@@ -18,6 +18,16 @@ interface FaqItem {
   answer: string;
 }
 
+interface GuideSection {
+  heading: string;
+  content: string;
+}
+
+interface Guide {
+  title: string;
+  sections: GuideSection[];
+}
+
 interface PageData {
   slug: string;
   title: string;
@@ -25,11 +35,14 @@ interface PageData {
   description: string;
   keywords: string[];
   deductionGuide?: DeductionGuide;
+  guide?: Guide;
   faq?: FaqItem[];
 }
 
+const pages = krPages as PageData[];
+
 export function generateStaticParams() {
-  return krPages.map((page: PageData) => ({ slug: page.slug }));
+  return pages.map((page) => ({ slug: page.slug }));
 }
 
 export function generateMetadata({
@@ -38,7 +51,7 @@ export function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   return params.then(({ slug }) => {
-    const page = krPages.find((p: PageData) => p.slug === slug);
+    const page = pages.find((p) => p.slug === slug);
     if (!page) return {};
     return {
       title: `${page.title} — CalcHub`,
@@ -61,11 +74,11 @@ export default async function KrLongtailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const page = krPages.find((p: PageData) => p.slug === slug);
+  const page = pages.find((p) => p.slug === slug);
   if (!page) notFound();
 
-  const otherPages = krPages
-    .filter((p: PageData) => p.slug !== slug)
+  const otherPages = pages
+    .filter((p) => p.slug !== slug)
     .slice(0, 5);
 
   return (
@@ -79,6 +92,25 @@ export default async function KrLongtailPage({
       </div>
 
       <KrCalculator />
+
+      {/* 상세 가이드 */}
+      {page.guide && (
+        <section className="mt-12">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+            {page.guide.title}
+          </h2>
+          {page.guide.sections.map((section: GuideSection, i: number) => (
+            <div key={i} className="mt-6">
+              <h3 className="text-base font-semibold text-gray-800 dark:text-gray-200">
+                {section.heading}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                {section.content}
+              </p>
+            </div>
+          ))}
+        </section>
+      )}
 
       {/* 경비 항목 가이드 */}
       {page.deductionGuide && (
@@ -124,7 +156,7 @@ export default async function KrLongtailPage({
               from={slug}
             />
           </li>
-          {otherPages.map((p: PageData) => (
+          {otherPages.map((p) => (
             <li key={p.slug}>
               <RelatedLink
                 href={`/kr/${p.slug}`}
